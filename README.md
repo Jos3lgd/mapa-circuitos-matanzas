@@ -12,4 +12,4 @@ Mapa interactivo que muestra los circuitos eléctricos de la provincia de Matanz
 2. Haz clic en los marcadores para ver detalles
 
 ## Hosting
-Este mapa está alojado en GitHub Pages: [Enlace al mapa](https://tu-usuario.github.io/nombre-repositorio/circuitos_matanzas.html)
+Este mapa está alojado en GitHub Pages: https://jos3lgd.github.io/mapa-circuitos-matanzas/circuitos_matanzas.html
