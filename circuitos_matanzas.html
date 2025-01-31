@@ -1,0 +1,4331 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_be204cfc96cee5b6c399fc96badf4454 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+<div style="position: fixed; 
+            bottom: 10px; 
+            right: 10px; 
+            z-index: 1000;
+            padding: 8px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            font-family: Arial;
+            font-size: 12px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);">
+    🗺️ Mapa creado por <strong>jos3lgd</strong><br>
+    <em>Actualizado: Enero 2025</em><br>
+    <a href="https://t.me/infomatanzas" 
+       target="_blank" 
+       style="color: #0088cc; text-decoration: none;">
+       📢 Infomatanzas en Telegram
+    </a>
+</div>
+    
+     <div style="position: fixed;
+                 bottom: 50px; left: 50px; width: 210px; height: 160px;
+                 border:2px solid grey; z-index:9999; font-size:14px;
+                 background-color:white;
+                 padding: 10px;">
+         <b>Leyenda</b><br>
+         <i class="glyphicon glyphicon-info-sign" style="color:red"></i> Bloque 1<br>
+         <i class="glyphicon glyphicon-info-sign" style="color:blue"></i> Bloque 2<br>
+         <i class="glyphicon glyphicon-info-sign" style="color:green"></i> Bloque 3<br>
+         <i class="glyphicon glyphicon-info-sign" style="color:orange"></i> Bloque 4<br>
+         <i class="glyphicon glyphicon-info-sign" style="color:purple"></i> Circuitos no apagables
+     </div>
+    
+            <div class="folium-map" id="map_be204cfc96cee5b6c399fc96badf4454" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_be204cfc96cee5b6c399fc96badf4454 = L.map(
+                "map_be204cfc96cee5b6c399fc96badf4454",
+                {
+                    center: [22.9, -81.2],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 9,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_65f36041785e06dfb97d58b7db549df7 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_65f36041785e06dfb97d58b7db549df7.addTo(map_be204cfc96cee5b6c399fc96badf4454);
+        
+    
+            var marker_4283eef295611d72fa7846fae8a859a3 = L.marker(
+                [23.04408551550322, -81.19924530215299],
+                {
+}
+            ).addTo(map_be204cfc96cee5b6c399fc96badf4454);
+        
+    
+            var icon_c93d37363dd0dbc9a6c73f7f4443f8d4 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_4283eef295611d72fa7846fae8a859a3.setIcon(icon_c93d37363dd0dbc9a6c73f7f4443f8d4);
+        
+    
+        var popup_5efd39afc23305a1988954e730e99aab = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_40319ed1545f0ba09bb59de6c16c67d9 = $(`<div id="html_40319ed1545f0ba09bb59de6c16c67d9" style="width: 100.0%; height: 100.0%;"><strong>Cárdenas 1</strong><br>Bloque: 1<br>Circuito: C1225<br>Consumo Mañana: 4.0 MWh<br>Consumo Tarde: 3.5 MWh<br>Consumo Noche: 4.7 MWh</div>`)[0];
+                popup_5efd39afc23305a1988954e730e99aab.setContent(html_40319ed1545f0ba09bb59de6c16c67d9);
+            
+        
+
+        marker_4283eef295611d72fa7846fae8a859a3.bindPopup(popup_5efd39afc23305a1988954e730e99aab)
+        ;
+
+        
+    
+    
+            var marker_ce339cc9b45a62f2913041b098506d2b = L.marker(
+                [23.03645984768606, -81.213497778111],
+                {
+}
+            ).addTo(map_be204cfc96cee5b6c399fc96badf4454);
+        
+    
+            var icon_0e93bf4165a6a181baefc850c10e9c13 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_ce339cc9b45a62f2913041b098506d2b.setIcon(icon_0e93bf4165a6a181baefc850c10e9c13);
+        
+    
+        var popup_2f2fc9c35404cd67ecd453b97b58191d = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_2971b9baa7507930945ed3f2307d5681 = $(`<div id="html_2971b9baa7507930945ed3f2307d5681" style="width: 100.0%; height: 100.0%;"><strong>Cárdenas 2</strong><br>Bloque: 2<br>Circuito: C1221<br>Consumo Mañana: 4.3 MWh<br>Consumo Tarde: 4.0 MWh<br>Consumo Noche: 5.1 MWh</div>`)[0];
+                popup_2f2fc9c35404cd67ecd453b97b58191d.setContent(html_2971b9baa7507930945ed3f2307d5681);
+            
+        
+
+        marker_ce339cc9b45a62f2913041b098506d2b.bindPopup(popup_2f2fc9c35404cd67ecd453b97b58191d)
+        ;
+
+        
+    
+    
+            var marker_3d97e747b077bf820daaa6af58cc0202 = L.marker(
+                [23.04438334285972, -81.22190265871579],
+                {
+}
+            ).addTo(map_be204cfc96cee5b6c399fc96badf4454);
+        
+    
+            var icon_ea3ea950a29c34a667f128c874b633f7 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_3d97e747b077bf820daaa6af58cc0202.setIcon(icon_ea3ea950a29c34a667f128c874b633f7);
+        
+    
+        var popup_997f2189e12d84854487a2db7db4fde2 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_40daf12097db24d7f6ad2ad734e692fd = $(`<div id="html_40daf12097db24d7f6ad2ad734e692fd" style="width: 100.0%; height: 100.0%;"><strong>Cárdenas 3</strong><br>Bloque: 4<br>Circuito: C1222<br>Consumo Mañana: 5.1 MWh<br>Consumo Tarde: 4.0 MWh<br>Consumo Noche: 5.4 MWh</div>`)[0];
+                popup_997f2189e12d84854487a2db7db4fde2.setContent(html_40daf12097db24d7f6ad2ad734e692fd);
+            
+        
+
+        marker_3d97e747b077bf820daaa6af58cc0202.bindPopup(popup_997f2189e12d84854487a2db7db4fde2)
+        ;
+
+        
+    
+    
+            var marker_410364982e95190b1cd7ec893136403a = L.marker(
+                [23.04257503123934, -81.1958086364548],
+                {
+}
+            ).addTo(map_be204cfc96cee5b6c399fc96badf4454);
+        
+    
+            var icon_004abe7c06e9eccc3b47e312f74f4f8f = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_410364982e95190b1cd7ec893136403a.setIcon(icon_004abe7c06e9eccc3b47e312f74f4f8f);
+        
+    
+        var popup_69d76f2f8c688d3132ae9f10ef246fed = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_3c7162a4bfa21d57f37eda02b06d4924 = $(`<div id="html_3c7162a4bfa21d57f37eda02b06d4924" style="width: 100.0%; height: 100.0%;"><strong>Cárdenas 4</strong><br>Bloque: 3<br>Circuito: C1224<br>Consumo Mañana: 4.7 MWh<br>Consumo Tarde: 4.3 MWh<br>Consumo Noche: 5.7 MWh</div>`)[0];
+                popup_69d76f2f8c688d3132ae9f10ef246fed.setContent(html_3c7162a4bfa21d57f37eda02b06d4924);
+            
+        
+
+        marker_410364982e95190b1cd7ec893136403a.bindPopup(popup_69d76f2f8c688d3132ae9f10ef246fed)
+        ;
+
+        
+    
+    
+            var marker_9b4e9208b46cc214957d9ea1919d8d01 = L.marker(
+                [23.05490398312883, -81.32168369129027],
+                {
+}
+            ).addTo(map_be204cfc96cee5b6c399fc96badf4454);
+        
+    
+            var icon_090306806ba133ca1ff06bbfc66fe6c9 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_9b4e9208b46cc214957d9ea1919d8d01.setIcon(icon_090306806ba133ca1ff06bbfc66fe6c9);
+        
+    
+        var popup_6f51a2d1f5220914e7127e21f7797fb0 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_0791f3da65ed30bd212b1514b1510567 = $(`<div id="html_0791f3da65ed30bd212b1514b1510567" style="width: 100.0%; height: 100.0%;"><strong>Cantel</strong><br>Bloque: 2<br>Circuito: CI160<br>Consumo Mañana: 0.5 MWh<br>Consumo Tarde: 0.7 MWh<br>Consumo Noche: 0.3 MWh</div>`)[0];
+                popup_6f51a2d1f5220914e7127e21f7797fb0.setContent(html_0791f3da65ed30bd212b1514b1510567);
+            
+        
+
+        marker_9b4e9208b46cc214957d9ea1919d8d01.bindPopup(popup_6f51a2d1f5220914e7127e21f7797fb0)
+        ;
+
+        
+    
+    
+            var marker_9ffdfac9e47da12292b0e6fb4543717e = L.marker(
+                [22.53856331033363, -81.1190130579901],
+                {
+}
+            ).addTo(map_be204cfc96cee5b6c399fc96badf4454);
+        
+    
+            var icon_b4cdc0a3ee8a4fe3df79f3cc6dd403fc = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_9ffdfac9e47da12292b0e6fb4543717e.setIcon(icon_b4cdc0a3ee8a4fe3df79f3cc6dd403fc);
+        
+    
+        var popup_acf9844603318c513eeaa70546d8b7a5 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_3c87fb99b8ea48136d0b6dd04d737377 = $(`<div id="html_3c87fb99b8ea48136d0b6dd04d737377" style="width: 100.0%; height: 100.0%;"><strong>Cítrico-Jaguey</strong><br>Bloque: 1<br>Circuito: 4485<br>Consumo Mañana: 0.2 MWh<br>Consumo Tarde: 0.2 MWh<br>Consumo Noche: 0.1 MWh</div>`)[0];
+                popup_acf9844603318c513eeaa70546d8b7a5.setContent(html_3c87fb99b8ea48136d0b6dd04d737377);
+            
+        
+
+        marker_9ffdfac9e47da12292b0e6fb4543717e.bindPopup(popup_acf9844603318c513eeaa70546d8b7a5)
+        ;
+
+        
+    
+    
+            var marker_ee263e611519b500ef9429a1a8ec5e81 = L.marker(
+                [22.06607942068498, -81.03361678667572],
+                {
+}
+            ).addTo(map_be204cfc96cee5b6c399fc96badf4454);
+        
+    
+            var icon_caa0283661906c094b627ab7b5579b6a = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_ee263e611519b500ef9429a1a8ec5e81.setIcon(icon_caa0283661906c094b627ab7b5579b6a);
+        
+    
+        var popup_da7df18e48545d08ae92f99231218a41 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_d8a2da32c08842b7280da12601913f13 = $(`<div id="html_d8a2da32c08842b7280da12601913f13" style="width: 100.0%; height: 100.0%;"><strong>Villa Playa Girón</strong><br>Bloque: 1<br>Circuito: GI51<br>Consumo Mañana: 0.077 MWh<br>Consumo Tarde: 0.092 MWh<br>Consumo Noche: 0.072 MWh</div>`)[0];
+                popup_da7df18e48545d08ae92f99231218a41.setContent(html_d8a2da32c08842b7280da12601913f13);
+            
+        
+
+        marker_ee263e611519b500ef9429a1a8ec5e81.bindPopup(popup_da7df18e48545d08ae92f99231218a41)
+        ;
+
+        
+    
+    
+            var marker_1e75f77b0daea844c057d7b876f95ff5 = L.marker(
+                [23.14362542838169, -81.6744213065994],
+                {
+}
+            ).addTo(map_be204cfc96cee5b6c399fc96badf4454);
+        
+    
+            var icon_e6adade14a1831157cc89daab3d2b86e = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_1e75f77b0daea844c057d7b876f95ff5.setIcon(icon_e6adade14a1831157cc89daab3d2b86e);
+        
+    
+        var popup_2c0c332e78948212f08ed7c2a155a5b0 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_4691b8f1334943f7d0fb0c2c6656c014 = $(`<div id="html_4691b8f1334943f7d0fb0c2c6656c014" style="width: 100.0%; height: 100.0%;"><strong>Campismo Bacunayagua</strong><br>Bloque: 3<br>Circuito: Z1170<br>Consumo Mañana: 0.097 MWh<br>Consumo Tarde: 0.139 MWh<br>Consumo Noche: 0.158 MWh</div>`)[0];
+                popup_2c0c332e78948212f08ed7c2a155a5b0.setContent(html_4691b8f1334943f7d0fb0c2c6656c014);
+            
+        
+
+        marker_1e75f77b0daea844c057d7b876f95ff5.bindPopup(popup_2c0c332e78948212f08ed7c2a155a5b0)
+        ;
+
+        
+    
+    
+            var marker_eba53d22bfdff070161c0b131cf44955 = L.marker(
+                [23.03333, -81.61667],
+                {
+}
+            ).addTo(map_be204cfc96cee5b6c399fc96badf4454);
+        
+    
+            var icon_edc15c57c1ba1910ee0dd96141d7efd2 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_eba53d22bfdff070161c0b131cf44955.setIcon(icon_edc15c57c1ba1910ee0dd96141d7efd2);
+        
+    
+        var popup_f7f4baa5b24ea8eb5341cea3eb2c6778 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_265f42c69549a948986285bf37823465 = $(`<div id="html_265f42c69549a948986285bf37823465" style="width: 100.0%; height: 100.0%;"><strong>Los Molinos</strong><br>Bloque: 4<br>Circuito: MI1328<br>Consumo Mañana: 0.221 MWh<br>Consumo Tarde: 0.224 MWh<br>Consumo Noche: 0.261 MWh</div>`)[0];
+                popup_f7f4baa5b24ea8eb5341cea3eb2c6778.setContent(html_265f42c69549a948986285bf37823465);
+            
+        
+
+        marker_eba53d22bfdff070161c0b131cf44955.bindPopup(popup_f7f4baa5b24ea8eb5341cea3eb2c6778)
+        ;
+
+        
+    
+    
+            var marker_400b98169e816d2c790245c5d5e907fd = L.marker(
+                [23.02398825400453, -81.61774662124304],
+                {
+}
+            ).addTo(map_be204cfc96cee5b6c399fc96badf4454);
+        
+    
+            var icon_578bef38b6647310969429a12b031f82 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_400b98169e816d2c790245c5d5e907fd.setIcon(icon_578bef38b6647310969429a12b031f82);
+        
+    
+        var popup_e12fe434b19bd0999d0c09e431e53bae = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_66ed193e6946a12ecf87a0d7cb4eacbe = $(`<div id="html_66ed193e6946a12ecf87a0d7cb4eacbe" style="width: 100.0%; height: 100.0%;"><strong>EIDE</strong><br>Bloque: 4<br>Circuito: MI1328<br>Consumo Mañana: 0.221 MWh<br>Consumo Tarde: 0.224 MWh<br>Consumo Noche: 0.261 MWh</div>`)[0];
+                popup_e12fe434b19bd0999d0c09e431e53bae.setContent(html_66ed193e6946a12ecf87a0d7cb4eacbe);
+            
+        
+
+        marker_400b98169e816d2c790245c5d5e907fd.bindPopup(popup_e12fe434b19bd0999d0c09e431e53bae)
+        ;
+
+        
+    
+    
+            var marker_73a8b5bbd9d6e4de0ceb8f13c451eadc = L.marker(
+                [22.8, -80.58333],
+                {
+}
+            ).addTo(map_be204cfc96cee5b6c399fc96badf4454);
+        
+    
+            var icon_a06633fed592d91fb613cc7ec03c5d13 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_73a8b5bbd9d6e4de0ceb8f13c451eadc.setIcon(icon_a06633fed592d91fb613cc7ec03c5d13);
+        
+    
+        var popup_399ae720fad86347a558c7f2624a32d9 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_a68aa9258a6105b6059f67b024924424 = $(`<div id="html_a68aa9258a6105b6059f67b024924424" style="width: 100.0%; height: 100.0%;"><strong>Sabana Grande</strong><br>Bloque: 2<br>Circuito: MI5680<br>Consumo Mañana: 0.3 MWh<br>Consumo Tarde: 0.6 MWh<br>Consumo Noche: 0.3 MWh</div>`)[0];
+                popup_399ae720fad86347a558c7f2624a32d9.setContent(html_a68aa9258a6105b6059f67b024924424);
+            
+        
+
+        marker_73a8b5bbd9d6e4de0ceb8f13c451eadc.bindPopup(popup_399ae720fad86347a558c7f2624a32d9)
+        ;
+
+        
+    
+    
+            var marker_063c80adc6e6db23f33c75389e8818ba = L.marker(
+                [22.36659837709401, -81.1640949551428],
+                {
+}
+            ).addTo(map_be204cfc96cee5b6c399fc96badf4454);
+        
+    
+            var icon_dca36ea3b447857920cf0cfab1f847ef = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_063c80adc6e6db23f33c75389e8818ba.setIcon(icon_dca36ea3b447857920cf0cfab1f847ef);
+        
+    
+        var popup_c94c481f27411e682a2bb28a589ab068 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_cf9b8463935e4bc98d11ab602f76e188 = $(`<div id="html_cf9b8463935e4bc98d11ab602f76e188" style="width: 100.0%; height: 100.0%;"><strong>Guamá</strong><br>Bloque: 2<br>Circuito: G173<br>Consumo Mañana: 0.1 MWh<br>Consumo Tarde: 0.1 MWh<br>Consumo Noche: 0.1 MWh</div>`)[0];
+                popup_c94c481f27411e682a2bb28a589ab068.setContent(html_cf9b8463935e4bc98d11ab602f76e188);
+            
+        
+
+        marker_063c80adc6e6db23f33c75389e8818ba.bindPopup(popup_c94c481f27411e682a2bb28a589ab068)
+        ;
+
+        
+    
+    
+            var marker_0062d9a6ce4f48231e3634d09e77d0a4 = L.marker(
+                [23.008898576289017, -81.58757339689238],
+                {
+}
+            ).addTo(map_be204cfc96cee5b6c399fc96badf4454);
+        
+    
+            var icon_b18e0509e1f9e43e76297449616df1ba = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_0062d9a6ce4f48231e3634d09e77d0a4.setIcon(icon_b18e0509e1f9e43e76297449616df1ba);
+        
+    
+        var popup_1c33e15bc27a9dc46e9e9532c7fe6634 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_798bf9ab90433b3488f13e453a2bcb79 = $(`<div id="html_798bf9ab90433b3488f13e453a2bcb79" style="width: 100.0%; height: 100.0%;"><strong>Bellotex 1</strong><br>Bloque: 4<br>Circuito: 4400<br>Consumo Mañana: 0.4 MWh<br>Consumo Tarde: 0.3 MWh<br>Consumo Noche: 0.3 MWh</div>`)[0];
+                popup_1c33e15bc27a9dc46e9e9532c7fe6634.setContent(html_798bf9ab90433b3488f13e453a2bcb79);
+            
+        
+
+        marker_0062d9a6ce4f48231e3634d09e77d0a4.bindPopup(popup_1c33e15bc27a9dc46e9e9532c7fe6634)
+        ;
+
+        
+    
+    
+            var marker_81e1d9a2ae0e5c095a5d5eed53323dfa = L.marker(
+                [22.33655, -80.99577],
+                {
+}
+            ).addTo(map_be204cfc96cee5b6c399fc96badf4454);
+        
+    
+            var icon_1c69d4b2407d1068e6b30751ccbfb507 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_81e1d9a2ae0e5c095a5d5eed53323dfa.setIcon(icon_1c69d4b2407d1068e6b30751ccbfb507);
+        
+    
+        var popup_1730540eef7760245f6a5c56147d7e31 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_1d32ba1a37d3e83b367bd284c06bbf93 = $(`<div id="html_1d32ba1a37d3e83b367bd284c06bbf93" style="width: 100.0%; height: 100.0%;"><strong>San Francisco</strong><br>Bloque: 3<br>Circuito: U1638<br>Consumo Mañana: 0.392 MWh<br>Consumo Tarde: 0.539 MWh<br>Consumo Noche: 0.496 MWh</div>`)[0];
+                popup_1730540eef7760245f6a5c56147d7e31.setContent(html_1d32ba1a37d3e83b367bd284c06bbf93);
+            
+        
+
+        marker_81e1d9a2ae0e5c095a5d5eed53323dfa.bindPopup(popup_1730540eef7760245f6a5c56147d7e31)
+        ;
+
+        
+    
+    
+            var marker_427ea821ce428ca20af2ec978f7f7f35 = L.marker(
+                [23.04386, -81.58438],
+                {
+}
+            ).addTo(map_be204cfc96cee5b6c399fc96badf4454);
+        
+    
+            var icon_95bac229e421caf00ff92222528d787e = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_427ea821ce428ca20af2ec978f7f7f35.setIcon(icon_95bac229e421caf00ff92222528d787e);
+        
+    
+        var popup_5d2262bad5c9e11e303431af70f1ea86 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_fad01a033a27538ecc5b8ca8e8fb1d3e = $(`<div id="html_fad01a033a27538ecc5b8ca8e8fb1d3e" style="width: 100.0%; height: 100.0%;"><strong>Compostela</strong><br>Bloque: 2<br>Circuito: MI1454<br>Consumo Mañana: 0.4 MWh<br>Consumo Tarde: 0.4 MWh<br>Consumo Noche: 0.5 MWh</div>`)[0];
+                popup_5d2262bad5c9e11e303431af70f1ea86.setContent(html_fad01a033a27538ecc5b8ca8e8fb1d3e);
+            
+        
+
+        marker_427ea821ce428ca20af2ec978f7f7f35.bindPopup(popup_5d2262bad5c9e11e303431af70f1ea86)
+        ;
+
+        
+    
+    
+            var marker_93d29371238ea053b69b79ade997cb35 = L.marker(
+                [23.0252832702389, -81.5747236257249],
+                {
+}
+            ).addTo(map_be204cfc96cee5b6c399fc96badf4454);
+        
+    
+            var icon_f9351f66d9a86917f2e8a4699cb16ff5 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_93d29371238ea053b69b79ade997cb35.setIcon(icon_f9351f66d9a86917f2e8a4699cb16ff5);
+        
+    
+        var popup_a98202edcce90a0c674093598164eedd = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_ded332441516e8b46801842597532872 = $(`<div id="html_ded332441516e8b46801842597532872" style="width: 100.0%; height: 100.0%;"><strong>El Cocal</strong><br>Bloque: 3<br>Circuito: MI1503<br>Consumo Mañana: 0.5 MWh<br>Consumo Tarde: 0.4 MWh<br>Consumo Noche: 0.6 MWh</div>`)[0];
+                popup_a98202edcce90a0c674093598164eedd.setContent(html_ded332441516e8b46801842597532872);
+            
+        
+
+        marker_93d29371238ea053b69b79ade997cb35.bindPopup(popup_a98202edcce90a0c674093598164eedd)
+        ;
+
+        
+    
+    
+            var marker_59756c18cb90ad32530fc2bc2cd4a455 = L.marker(
+                [23.0252832702389, -81.5747236257249],
+                {
+}
+            ).addTo(map_be204cfc96cee5b6c399fc96badf4454);
+        
+    
+            var icon_390229a1e0e8f4d870885daa14296b43 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_59756c18cb90ad32530fc2bc2cd4a455.setIcon(icon_390229a1e0e8f4d870885daa14296b43);
+        
+    
+        var popup_a54935e6f07eadcb049599cd317c15ad = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_123af71ef63c62792b5f4cd7a7e5e535 = $(`<div id="html_123af71ef63c62792b5f4cd7a7e5e535" style="width: 100.0%; height: 100.0%;"><strong>Playa Larga</strong><br>Bloque: 2<br>Circuito: GI69<br>Consumo Mañana: 0.3 MWh<br>Consumo Tarde: 0.4 MWh<br>Consumo Noche: 0.7 MWh</div>`)[0];
+                popup_a54935e6f07eadcb049599cd317c15ad.setContent(html_123af71ef63c62792b5f4cd7a7e5e535);
+            
+        
+
+        marker_59756c18cb90ad32530fc2bc2cd4a455.bindPopup(popup_a54935e6f07eadcb049599cd317c15ad)
+        ;
+
+        
+    
+    
+            var marker_ea9a0d1302a2d2f222672b3991aeb851 = L.marker(
+                [22.80364072744321, -81.2966751844968],
+                {
+}
+            ).addTo(map_be204cfc96cee5b6c399fc96badf4454);
+        
+    
+            var icon_a052762187e26809b1000beea85bba4c = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_ea9a0d1302a2d2f222672b3991aeb851.setIcon(icon_a052762187e26809b1000beea85bba4c);
+        
+    
+        var popup_6b15a346320928bde0408d7bc6e65563 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_e9345d5827477cf949beb07a0c39ac08 = $(`<div id="html_e9345d5827477cf949beb07a0c39ac08" style="width: 100.0%; height: 100.0%;"><strong>Jaime López</strong><br>Bloque: 4<br>Circuito: 4814<br>Consumo Mañana: 0.8 MWh<br>Consumo Tarde: 1.4 MWh<br>Consumo Noche: 0.7 MWh</div>`)[0];
+                popup_6b15a346320928bde0408d7bc6e65563.setContent(html_e9345d5827477cf949beb07a0c39ac08);
+            
+        
+
+        marker_ea9a0d1302a2d2f222672b3991aeb851.bindPopup(popup_6b15a346320928bde0408d7bc6e65563)
+        ;
+
+        
+    
+    
+            var marker_db07e8c2c0b2211cdfb0f703b2ff8805 = L.marker(
+                [22.526827711225888, -81.12907654617058],
+                {
+}
+            ).addTo(map_be204cfc96cee5b6c399fc96badf4454);
+        
+    
+            var icon_30fdd58b46df6e73300d0b4884121379 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_db07e8c2c0b2211cdfb0f703b2ff8805.setIcon(icon_30fdd58b46df6e73300d0b4884121379);
+        
+    
+        var popup_ae8f238a9e71bccb303855b64e7ba361 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_0ee7ae41181f2d967503fd8226b95a63 = $(`<div id="html_0ee7ae41181f2d967503fd8226b95a63" style="width: 100.0%; height: 100.0%;"><strong>Jagüey Grande</strong><br>Bloque: 1<br>Circuito: GI103<br>Consumo Mañana: 0.5 MWh<br>Consumo Tarde: 0.7 MWh<br>Consumo Noche: 0.8 MWh</div>`)[0];
+                popup_ae8f238a9e71bccb303855b64e7ba361.setContent(html_0ee7ae41181f2d967503fd8226b95a63);
+            
+        
+
+        marker_db07e8c2c0b2211cdfb0f703b2ff8805.bindPopup(popup_ae8f238a9e71bccb303855b64e7ba361)
+        ;
+
+        
+    
+    
+            var marker_d8429ae9bd120e93f98564f61d33a900 = L.marker(
+                [23.03026, -81.51631],
+                {
+}
+            ).addTo(map_be204cfc96cee5b6c399fc96badf4454);
+        
+    
+            var icon_89edddc8649d37b1877e167f3f3a7445 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_d8429ae9bd120e93f98564f61d33a900.setIcon(icon_89edddc8649d37b1877e167f3f3a7445);
+        
+    
+        var popup_74937524edf3b951653baeaeced85654 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_cb72731ae49c8895482d8d94e72e0258 = $(`<div id="html_cb72731ae49c8895482d8d94e72e0258" style="width: 100.0%; height: 100.0%;"><strong>Gelpi</strong><br>Bloque: 3<br>Circuito: MJ662<br>Consumo Mañana: 0.5 MWh<br>Consumo Tarde: 0.6 MWh<br>Consumo Noche: 0.8 MWh</div>`)[0];
+                popup_74937524edf3b951653baeaeced85654.setContent(html_cb72731ae49c8895482d8d94e72e0258);
+            
+        
+
+        marker_d8429ae9bd120e93f98564f61d33a900.bindPopup(popup_74937524edf3b951653baeaeced85654)
+        ;
+
+        
+    
+    
+            var marker_896535dbcbddd6f6e4011b5a4b639225 = L.marker(
+                [23.10531615178386, -81.28458992599151],
+                {
+}
+            ).addTo(map_be204cfc96cee5b6c399fc96badf4454);
+        
+    
+            var icon_2f0942e3429bc58ae0e7abdb7fc70164 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_896535dbcbddd6f6e4011b5a4b639225.setIcon(icon_2f0942e3429bc58ae0e7abdb7fc70164);
+        
+    
+        var popup_d0ca994ac67c5895f23a954ce96b39c3 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_9344c3b9462f6836258854f550d58eca = $(`<div id="html_9344c3b9462f6836258854f550d58eca" style="width: 100.0%; height: 100.0%;"><strong>Santa Marta 1</strong><br>Bloque: 3<br>Circuito: VI1520<br>Consumo Mañana: 0.5 MWh<br>Consumo Tarde: 0.6 MWh<br>Consumo Noche: 0.8 MWh</div>`)[0];
+                popup_d0ca994ac67c5895f23a954ce96b39c3.setContent(html_9344c3b9462f6836258854f550d58eca);
+            
+        
+
+        marker_896535dbcbddd6f6e4011b5a4b639225.bindPopup(popup_d0ca994ac67c5895f23a954ce96b39c3)
+        ;
+
+        
+    
+    
+            var marker_a42eff5d9d2dd19263461788911d9d82 = L.marker(
+                [23.050773509372707, 23.050773509372707],
+                {
+}
+            ).addTo(map_be204cfc96cee5b6c399fc96badf4454);
+        
+    
+            var icon_c70778fcf32f814a1f91c358d47cc0ed = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_a42eff5d9d2dd19263461788911d9d82.setIcon(icon_c70778fcf32f814a1f91c358d47cc0ed);
+        
+    
+        var popup_e6d9690763064ef3ae8afbd67ca7591e = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_14e03b4e5716f85463e085371e64c59f = $(`<div id="html_14e03b4e5716f85463e085371e64c59f" style="width: 100.0%; height: 100.0%;"><strong>Matanzas</strong><br>Bloque: 1<br>Circuito: MI1406<br>Consumo Mañana: 0.737 MWh<br>Consumo Tarde: 0.971 MWh<br>Consumo Noche: 0.916 MWh</div>`)[0];
+                popup_e6d9690763064ef3ae8afbd67ca7591e.setContent(html_14e03b4e5716f85463e085371e64c59f);
+            
+        
+
+        marker_a42eff5d9d2dd19263461788911d9d82.bindPopup(popup_e6d9690763064ef3ae8afbd67ca7591e)
+        ;
+
+        
+    
+    
+            var marker_f777d416c869a9b6593277bd44b8f8a4 = L.marker(
+                [23.045937369903605, -81.57432540054569],
+                {
+}
+            ).addTo(map_be204cfc96cee5b6c399fc96badf4454);
+        
+    
+            var icon_de9a4a646c1b433f5c32ad36f7985bab = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_f777d416c869a9b6593277bd44b8f8a4.setIcon(icon_de9a4a646c1b433f5c32ad36f7985bab);
+        
+    
+        var popup_d78edf4840b9952fecc192fd283a28c4 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_14506783415247c2ce5c8ab110aa0016 = $(`<div id="html_14506783415247c2ce5c8ab110aa0016" style="width: 100.0%; height: 100.0%;"><strong>Matanzas Casco Histórico</strong><br>Bloque: 1<br>Circuito: MI1410<br>Consumo Mañana: 0.4 MWh<br>Consumo Tarde: 0.6 MWh<br>Consumo Noche: 1.0 MWh</div>`)[0];
+                popup_d78edf4840b9952fecc192fd283a28c4.setContent(html_14506783415247c2ce5c8ab110aa0016);
+            
+        
+
+        marker_f777d416c869a9b6593277bd44b8f8a4.bindPopup(popup_d78edf4840b9952fecc192fd283a28c4)
+        ;
+
+        
+    
+    
+            var marker_8097ce03e003398a266a63942d1d204e = L.marker(
+                [22.980815944621543, -81.51160163598378],
+                {
+}
+            ).addTo(map_be204cfc96cee5b6c399fc96badf4454);
+        
+    
+            var icon_f777040c0b2cf9f144f7611879bea3b7 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_8097ce03e003398a266a63942d1d204e.setIcon(icon_f777040c0b2cf9f144f7611879bea3b7);
+        
+    
+        var popup_0ae307c2f400e11a7345db260fd629ff = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_e51fd44679decfe5dc588a46c3834d00 = $(`<div id="html_e51fd44679decfe5dc588a46c3834d00" style="width: 100.0%; height: 100.0%;"><strong>Guanábana</strong><br>Bloque: 4<br>Circuito: MI1390<br>Consumo Mañana: 0.754 MWh<br>Consumo Tarde: 0.826 MWh<br>Consumo Noche: 1.0 MWh</div>`)[0];
+                popup_0ae307c2f400e11a7345db260fd629ff.setContent(html_e51fd44679decfe5dc588a46c3834d00);
+            
+        
+
+        marker_8097ce03e003398a266a63942d1d204e.bindPopup(popup_0ae307c2f400e11a7345db260fd629ff)
+        ;
+
+        
+    
+    
+            var marker_75eda75c258dde13ac2eb1f4fbb56a83 = L.marker(
+                [22.979819106386458, -81.72113325893682],
+                {
+}
+            ).addTo(map_be204cfc96cee5b6c399fc96badf4454);
+        
+    
+            var icon_c08b93f6235c39fd9862d355329ed237 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_75eda75c258dde13ac2eb1f4fbb56a83.setIcon(icon_c08b93f6235c39fd9862d355329ed237);
+        
+    
+        var popup_7f14107d44bb21b46f231e7f9efd2aea = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_fb53836a3b2089c6af6f1021769ebba7 = $(`<div id="html_fb53836a3b2089c6af6f1021769ebba7" style="width: 100.0%; height: 100.0%;"><strong>Ceiba Mocha</strong><br>Bloque: 4<br>Circuito: MI5452<br>Consumo Mañana: 0.747 MWh<br>Consumo Tarde: 0.8 MWh<br>Consumo Noche: 1.0 MWh</div>`)[0];
+                popup_7f14107d44bb21b46f231e7f9efd2aea.setContent(html_fb53836a3b2089c6af6f1021769ebba7);
+            
+        
+
+        marker_75eda75c258dde13ac2eb1f4fbb56a83.bindPopup(popup_7f14107d44bb21b46f231e7f9efd2aea)
+        ;
+
+        
+    
+    
+            var marker_959e6a75f9d045a5863f4e8ba2a52f69 = L.marker(
+                [22.070055230586018, -81.02787891842556],
+                {
+}
+            ).addTo(map_be204cfc96cee5b6c399fc96badf4454);
+        
+    
+            var icon_baf25a10f9b298dad46367f84d35d62c = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_959e6a75f9d045a5863f4e8ba2a52f69.setIcon(icon_baf25a10f9b298dad46367f84d35d62c);
+        
+    
+        var popup_7de29e48be816fc9425e6d9941c2546b = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_4f14b7cbf39177bc03243700cc6166a3 = $(`<div id="html_4f14b7cbf39177bc03243700cc6166a3" style="width: 100.0%; height: 100.0%;"><strong>Playa Girón</strong><br>Bloque: 1<br>Circuito: GI55<br>Consumo Mañana: 2.0 MWh<br>Consumo Tarde: 0.877 MWh<br>Consumo Noche: 1.022 MWh</div>`)[0];
+                popup_7de29e48be816fc9425e6d9941c2546b.setContent(html_4f14b7cbf39177bc03243700cc6166a3);
+            
+        
+
+        marker_959e6a75f9d045a5863f4e8ba2a52f69.bindPopup(popup_7de29e48be816fc9425e6d9941c2546b)
+        ;
+
+        
+    
+    
+            var marker_2873915eacc517f9d8ddbfec0144091f = L.marker(
+                [22.655244648971866, -81.19613167769674],
+                {
+}
+            ).addTo(map_be204cfc96cee5b6c399fc96badf4454);
+        
+    
+            var icon_d3097e619da872eac5233a9b69f3e8ca = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_2873915eacc517f9d8ddbfec0144091f.setIcon(icon_d3097e619da872eac5233a9b69f3e8ca);
+        
+    
+        var popup_978d8415ae6631bf02d5bc4e2e7de3b7 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_603573f008ee71d99ac44142cb82c56c = $(`<div id="html_603573f008ee71d99ac44142cb82c56c" style="width: 100.0%; height: 100.0%;"><strong>San José de Marcos</strong><br>Bloque: 2<br>Circuito: 4073<br>Consumo Mañana: 1.4 MWh<br>Consumo Tarde: 2.1 MWh<br>Consumo Noche: 1.1 MWh</div>`)[0];
+                popup_978d8415ae6631bf02d5bc4e2e7de3b7.setContent(html_603573f008ee71d99ac44142cb82c56c);
+            
+        
+
+        marker_2873915eacc517f9d8ddbfec0144091f.bindPopup(popup_978d8415ae6631bf02d5bc4e2e7de3b7)
+        ;
+
+        
+    
+    
+            var marker_8facdda894d6738e1105409a11509b84 = L.marker(
+                [23.059423266829544, -81.67453532893904],
+                {
+}
+            ).addTo(map_be204cfc96cee5b6c399fc96badf4454);
+        
+    
+            var icon_c7f9a36f750e7c67ecec7868d04ca02c = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_8facdda894d6738e1105409a11509b84.setIcon(icon_c7f9a36f750e7c67ecec7868d04ca02c);
+        
+    
+        var popup_1dc05e4ffbcc7c343b002befd650e47c = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_eb7aeabc66325ce475bb8c2587c9e98b = $(`<div id="html_eb7aeabc66325ce475bb8c2587c9e98b" style="width: 100.0%; height: 100.0%;"><strong>Corral Nuevo</strong><br>Bloque: 3<br>Circuito: MI1471<br>Consumo Mañana: 0.7 MWh<br>Consumo Tarde: 1.0 MWh<br>Consumo Noche: 1.1 MWh</div>`)[0];
+                popup_1dc05e4ffbcc7c343b002befd650e47c.setContent(html_eb7aeabc66325ce475bb8c2587c9e98b);
+            
+        
+
+        marker_8facdda894d6738e1105409a11509b84.bindPopup(popup_1dc05e4ffbcc7c343b002befd650e47c)
+        ;
+
+        
+    
+    
+            var marker_ff867041c99f0577a47e29706ea35baa = L.marker(
+                [23.070856101996892, -81.61619793523903],
+                {
+}
+            ).addTo(map_be204cfc96cee5b6c399fc96badf4454);
+        
+    
+            var icon_2f9c6f85f00861561332476fa26566e6 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_ff867041c99f0577a47e29706ea35baa.setIcon(icon_2f9c6f85f00861561332476fa26566e6);
+        
+    
+        var popup_ce63a0d2a91cf6394486fa131b84a3d7 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_f9e17a7f84b860fecb7646f5daf23b1a = $(`<div id="html_f9e17a7f84b860fecb7646f5daf23b1a" style="width: 100.0%; height: 100.0%;"><strong>Mena</strong><br>Bloque: 3<br>Circuito: MI1471<br>Consumo Mañana: 0.7 MWh<br>Consumo Tarde: 1.0 MWh<br>Consumo Noche: 1.1 MWh</div>`)[0];
+                popup_ce63a0d2a91cf6394486fa131b84a3d7.setContent(html_f9e17a7f84b860fecb7646f5daf23b1a);
+            
+        
+
+        marker_ff867041c99f0577a47e29706ea35baa.bindPopup(popup_ce63a0d2a91cf6394486fa131b84a3d7)
+        ;
+
+        
+    
+    
+            var marker_556695f1b5747a0fe3169427726dfdb8 = L.marker(
+                [23.0194823248226, -81.5789147905337],
+                {
+}
+            ).addTo(map_be204cfc96cee5b6c399fc96badf4454);
+        
+    
+            var icon_a6ad638222ac3777924be07f9469a6bb = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_556695f1b5747a0fe3169427726dfdb8.setIcon(icon_a6ad638222ac3777924be07f9469a6bb);
+        
+    
+        var popup_92a5eee9c8fc09f361cebaa7117ab082 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_21149b1a4d09b29aca6a91478b1ede25 = $(`<div id="html_21149b1a4d09b29aca6a91478b1ede25" style="width: 100.0%; height: 100.0%;"><strong>Somatón</strong><br>Bloque: 4<br>Circuito: MI1387<br>Consumo Mañana: 0.7 MWh<br>Consumo Tarde: 0.9 MWh<br>Consumo Noche: 1.1 MWh</div>`)[0];
+                popup_92a5eee9c8fc09f361cebaa7117ab082.setContent(html_21149b1a4d09b29aca6a91478b1ede25);
+            
+        
+
+        marker_556695f1b5747a0fe3169427726dfdb8.bindPopup(popup_92a5eee9c8fc09f361cebaa7117ab082)
+        ;
+
+        
+    
+    
+            var marker_68bc22e13ae9ea9a8f5bf369f0bc88a0 = L.marker(
+                [22.987237009759593, -81.57509720400287],
+                {
+}
+            ).addTo(map_be204cfc96cee5b6c399fc96badf4454);
+        
+    
+            var icon_ce4afd8a7689556664aab9f406171646 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_68bc22e13ae9ea9a8f5bf369f0bc88a0.setIcon(icon_ce4afd8a7689556664aab9f406171646);
+        
+    
+        var popup_a2cf323a72fcf3c836284f2112e89a3b = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_68aa8df66d271ef7b2d4417b1461409a = $(`<div id="html_68aa8df66d271ef7b2d4417b1461409a" style="width: 100.0%; height: 100.0%;"><strong>Las Marías</strong><br>Bloque: 4<br>Circuito: MI1387<br>Consumo Mañana: 0.7 MWh<br>Consumo Tarde: 0.9 MWh<br>Consumo Noche: 1.1 MWh</div>`)[0];
+                popup_a2cf323a72fcf3c836284f2112e89a3b.setContent(html_68aa8df66d271ef7b2d4417b1461409a);
+            
+        
+
+        marker_68bc22e13ae9ea9a8f5bf369f0bc88a0.bindPopup(popup_a2cf323a72fcf3c836284f2112e89a3b)
+        ;
+
+        
+    
+    
+            var marker_b88e0eb135cae9cb8ad97e936ae67222 = L.marker(
+                [23.004553643199063, -81.5801090325457],
+                {
+}
+            ).addTo(map_be204cfc96cee5b6c399fc96badf4454);
+        
+    
+            var icon_9042b20ccc7d4591ef6f19be49032222 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_b88e0eb135cae9cb8ad97e936ae67222.setIcon(icon_9042b20ccc7d4591ef6f19be49032222);
+        
+    
+        var popup_ba10f45e48180803697f4bcea78b7096 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_1a173dd4be9eea7036fcfcf1d125af20 = $(`<div id="html_1a173dd4be9eea7036fcfcf1d125af20" style="width: 100.0%; height: 100.0%;"><strong>Bellotex 2</strong><br>Bloque: 4<br>Circuito: MI1387<br>Consumo Mañana: 0.7 MWh<br>Consumo Tarde: 0.9 MWh<br>Consumo Noche: 1.1 MWh</div>`)[0];
+                popup_ba10f45e48180803697f4bcea78b7096.setContent(html_1a173dd4be9eea7036fcfcf1d125af20);
+            
+        
+
+        marker_b88e0eb135cae9cb8ad97e936ae67222.bindPopup(popup_ba10f45e48180803697f4bcea78b7096)
+        ;
+
+        
+    
+    
+            var marker_15a27f9aa7f478a83b92a4c94c50c06c = L.marker(
+                [22.807372017442034, -81.19273057862074],
+                {
+}
+            ).addTo(map_be204cfc96cee5b6c399fc96badf4454);
+        
+    
+            var icon_693a76ebf83eae1aa5af270090bdeb14 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_15a27f9aa7f478a83b92a4c94c50c06c.setIcon(icon_693a76ebf83eae1aa5af270090bdeb14);
+        
+    
+        var popup_614ebd9bf13d12ec5068c4faee530594 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_dcbce16d7cc2b82d8a3e35cf8d2fa9ba = $(`<div id="html_dcbce16d7cc2b82d8a3e35cf8d2fa9ba" style="width: 100.0%; height: 100.0%;"><strong>Jovellanos 2</strong><br>Bloque: 4<br>Circuito: JI51<br>Consumo Mañana: 0.75 MWh<br>Consumo Tarde: 1.194 MWh<br>Consumo Noche: 1.129 MWh</div>`)[0];
+                popup_614ebd9bf13d12ec5068c4faee530594.setContent(html_dcbce16d7cc2b82d8a3e35cf8d2fa9ba);
+            
+        
+
+        marker_15a27f9aa7f478a83b92a4c94c50c06c.bindPopup(popup_614ebd9bf13d12ec5068c4faee530594)
+        ;
+
+        
+    
+    
+            var marker_39d460480ff5e6c3b16042f520e5ea50 = L.marker(
+                [22.801793124860787, -81.20839517842563],
+                {
+}
+            ).addTo(map_be204cfc96cee5b6c399fc96badf4454);
+        
+    
+            var icon_470f9ccf1f2687506e73883ca15458a5 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_39d460480ff5e6c3b16042f520e5ea50.setIcon(icon_470f9ccf1f2687506e73883ca15458a5);
+        
+    
+        var popup_3a950dbf24ea1cadadf0bacb4f5f7fe3 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_7027fee5a942f5e11bc9ec9b5fe587f9 = $(`<div id="html_7027fee5a942f5e11bc9ec9b5fe587f9" style="width: 100.0%; height: 100.0%;"><strong>Jovellanos 1</strong><br>Bloque: 4<br>Circuito: JI 44<br>Consumo Mañana: 2.23 MWh<br>Consumo Tarde: 2.9 MWh<br>Consumo Noche: 3.47 MWh</div>`)[0];
+                popup_3a950dbf24ea1cadadf0bacb4f5f7fe3.setContent(html_7027fee5a942f5e11bc9ec9b5fe587f9);
+            
+        
+
+        marker_39d460480ff5e6c3b16042f520e5ea50.bindPopup(popup_3a950dbf24ea1cadadf0bacb4f5f7fe3)
+        ;
+
+        
+    
+    
+            var marker_d65be3330a90e5c0620fde3285b05d3a = L.marker(
+                [23.10008324182575, -81.2897291905067],
+                {
+}
+            ).addTo(map_be204cfc96cee5b6c399fc96badf4454);
+        
+    
+            var icon_6e96a61288da4964f0509cd4cbeaa4aa = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_d65be3330a90e5c0620fde3285b05d3a.setIcon(icon_6e96a61288da4964f0509cd4cbeaa4aa);
+        
+    
+        var popup_817acca75643c0909247776ea6dfeb69 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_fcc29fbd4d28cfd27e77e8d6359ce63b = $(`<div id="html_fcc29fbd4d28cfd27e77e8d6359ce63b" style="width: 100.0%; height: 100.0%;"><strong>Guásimas</strong><br>Bloque: 3<br>Circuito: Z1139<br>Consumo Mañana: 1.04 MWh<br>Consumo Tarde: 1.319 MWh<br>Consumo Noche: 1.153 MWh</div>`)[0];
+                popup_817acca75643c0909247776ea6dfeb69.setContent(html_fcc29fbd4d28cfd27e77e8d6359ce63b);
+            
+        
+
+        marker_d65be3330a90e5c0620fde3285b05d3a.bindPopup(popup_817acca75643c0909247776ea6dfeb69)
+        ;
+
+        
+    
+    
+            var marker_2c0d2d4fd32255d52c105ab0d8871f84 = L.marker(
+                [23.08903381960419, -81.2849396702515],
+                {
+}
+            ).addTo(map_be204cfc96cee5b6c399fc96badf4454);
+        
+    
+            var icon_8fb1b1006579a7dca9cdf16650fe4267 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_2c0d2d4fd32255d52c105ab0d8871f84.setIcon(icon_8fb1b1006579a7dca9cdf16650fe4267);
+        
+    
+        var popup_6cc95e5b8189c9d335863cb3492b4290 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_7f92fb828232e4752d3469ae0d375a3b = $(`<div id="html_7f92fb828232e4752d3469ae0d375a3b" style="width: 100.0%; height: 100.0%;"><strong>Vegas</strong><br>Bloque: 2<br>Circuito: C1278<br>Consumo Mañana: 0.8 MWh<br>Consumo Tarde: 1.0 MWh<br>Consumo Noche: 1.2 MWh</div>`)[0];
+                popup_6cc95e5b8189c9d335863cb3492b4290.setContent(html_7f92fb828232e4752d3469ae0d375a3b);
+            
+        
+
+        marker_2c0d2d4fd32255d52c105ab0d8871f84.bindPopup(popup_6cc95e5b8189c9d335863cb3492b4290)
+        ;
+
+        
+    
+    
+            var marker_4dd65cd8ef8b6fa104df2b606c528fbf = L.marker(
+                [22.500463600900183, -81.13512000126646],
+                {
+}
+            ).addTo(map_be204cfc96cee5b6c399fc96badf4454);
+        
+    
+            var icon_310fe0f5230f8c443a409149cd7d4e3f = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_4dd65cd8ef8b6fa104df2b606c528fbf.setIcon(icon_310fe0f5230f8c443a409149cd7d4e3f);
+        
+    
+        var popup_356de7b268465ea0f0fa14f4478c8818 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_ee1ad3c6c9a1bbbc0acb62f7e80c0bab = $(`<div id="html_ee1ad3c6c9a1bbbc0acb62f7e80c0bab" style="width: 100.0%; height: 100.0%;"><strong>Australia</strong><br>Bloque: 1<br>Circuito: GI41<br>Consumo Mañana: 0.722 MWh<br>Consumo Tarde: 1.04 MWh<br>Consumo Noche: 1.279 MWh</div>`)[0];
+                popup_356de7b268465ea0f0fa14f4478c8818.setContent(html_ee1ad3c6c9a1bbbc0acb62f7e80c0bab);
+            
+        
+
+        marker_4dd65cd8ef8b6fa104df2b606c528fbf.bindPopup(popup_356de7b268465ea0f0fa14f4478c8818)
+        ;
+
+        
+    
+    
+            var marker_7ab8fff43a3c6e31249dac28e2e9bba4 = L.marker(
+                [23.054171423028652, -81.57274661934332],
+                {
+}
+            ).addTo(map_be204cfc96cee5b6c399fc96badf4454);
+        
+    
+            var icon_b9edb70250de7a6b05e06ca82e2a3be4 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_7ab8fff43a3c6e31249dac28e2e9bba4.setIcon(icon_b9edb70250de7a6b05e06ca82e2a3be4);
+        
+    
+        var popup_fd0944766c3109a52f429f5cca5ca746 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_d34926f43039286d4f7089449cd41f96 = $(`<div id="html_d34926f43039286d4f7089449cd41f96" style="width: 100.0%; height: 100.0%;"><strong>Versalles 1</strong><br>Bloque: 2<br>Circuito: MI147<br>Consumo Mañana: 0.8 MWh<br>Consumo Tarde: 1.0 MWh<br>Consumo Noche: 1.3 MWh</div>`)[0];
+                popup_fd0944766c3109a52f429f5cca5ca746.setContent(html_d34926f43039286d4f7089449cd41f96);
+            
+        
+
+        marker_7ab8fff43a3c6e31249dac28e2e9bba4.bindPopup(popup_fd0944766c3109a52f429f5cca5ca746)
+        ;
+
+        
+    
+    
+            var marker_a32059ea7b75b3849d619c427d3720a0 = L.marker(
+                [23.08389204343178, -81.44381752340436],
+                {
+}
+            ).addTo(map_be204cfc96cee5b6c399fc96badf4454);
+        
+    
+            var icon_bba0ee1481fbf276ed877e962ba8c094 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_a32059ea7b75b3849d619c427d3720a0.setIcon(icon_bba0ee1481fbf276ed877e962ba8c094);
+        
+    
+        var popup_dab9dbd4dbecd0c51b92957f4cf9a7aa = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_7304efd80917b77d803fe973c74bd078 = $(`<div id="html_7304efd80917b77d803fe973c74bd078" style="width: 100.0%; height: 100.0%;"><strong>Carbonera</strong><br>Bloque: 4<br>Circuito: MI042<br>Consumo Mañana: 0.7 MWh<br>Consumo Tarde: 1.0 MWh<br>Consumo Noche: 1.3 MWh</div>`)[0];
+                popup_dab9dbd4dbecd0c51b92957f4cf9a7aa.setContent(html_7304efd80917b77d803fe973c74bd078);
+            
+        
+
+        marker_a32059ea7b75b3849d619c427d3720a0.bindPopup(popup_dab9dbd4dbecd0c51b92957f4cf9a7aa)
+        ;
+
+        
+    
+    
+            var marker_b4995df0871f5c0e23f56a5453133ca1 = L.marker(
+                [23.03893562282411, -81.57863936038211],
+                {
+}
+            ).addTo(map_be204cfc96cee5b6c399fc96badf4454);
+        
+    
+            var icon_eb1bc77542919bc149e8a41256fc176f = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_b4995df0871f5c0e23f56a5453133ca1.setIcon(icon_eb1bc77542919bc149e8a41256fc176f);
+        
+    
+        var popup_e61dc3a1a3779004fd630242664c6ec1 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_77131b5a8477664d77f664d4377b6dea = $(`<div id="html_77131b5a8477664d77f664d4377b6dea" style="width: 100.0%; height: 100.0%;"><strong>Matanzas Pueblo Nuevo</strong><br>Bloque: 3<br>Circuito: MI1455<br>Consumo Mañana: 1.2 MWh<br>Consumo Tarde: 1.1 MWh<br>Consumo Noche: 1.4 MWh</div>`)[0];
+                popup_e61dc3a1a3779004fd630242664c6ec1.setContent(html_77131b5a8477664d77f664d4377b6dea);
+            
+        
+
+        marker_b4995df0871f5c0e23f56a5453133ca1.bindPopup(popup_e61dc3a1a3779004fd630242664c6ec1)
+        ;
+
+        
+    
+    
+            var marker_66049c73084df280c92705f2764eb8e5 = L.marker(
+                [22.712450302751524, -80.90564296727568],
+                {
+}
+            ).addTo(map_be204cfc96cee5b6c399fc96badf4454);
+        
+    
+            var icon_47e1aaac96046604ce973e824a8ae539 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_66049c73084df280c92705f2764eb8e5.setIcon(icon_47e1aaac96046604ce973e824a8ae539);
+        
+    
+        var popup_cd7a4534a9e94bdfad54c8b1f3488b0f = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_54ad1468eaa4f253f5e69de1df511ae3 = $(`<div id="html_54ad1468eaa4f253f5e69de1df511ae3" style="width: 100.0%; height: 100.0%;"><strong>Colón 1</strong><br>Bloque: 1<br>Circuito: Z-720<br>Consumo Mañana: 1.047 MWh<br>Consumo Tarde: 1.245 MWh<br>Consumo Noche: 1.445 MWh</div>`)[0];
+                popup_cd7a4534a9e94bdfad54c8b1f3488b0f.setContent(html_54ad1468eaa4f253f5e69de1df511ae3);
+            
+        
+
+        marker_66049c73084df280c92705f2764eb8e5.bindPopup(popup_cd7a4534a9e94bdfad54c8b1f3488b0f)
+        ;
+
+        
+    
+    
+            var marker_70f31fd9c3289dbb622b6effb79d40f1 = L.marker(
+                [22.729788021703467, -80.91007732883504],
+                {
+}
+            ).addTo(map_be204cfc96cee5b6c399fc96badf4454);
+        
+    
+            var icon_20d5be1da8c37f7a5871e51edf809a89 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_70f31fd9c3289dbb622b6effb79d40f1.setIcon(icon_20d5be1da8c37f7a5871e51edf809a89);
+        
+    
+        var popup_45bfe59364d275d0e57e8d252dd34eb4 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_42f6e010a7a8e35ba92cffd8e6d7112a = $(`<div id="html_42f6e010a7a8e35ba92cffd8e6d7112a" style="width: 100.0%; height: 100.0%;"><strong>Colón 2</strong><br>Bloque: 4<br>Circuito: Z-723<br>Consumo Mañana: 1.671 MWh<br>Consumo Tarde: 1.989 MWh<br>Consumo Noche: 2.209 MWh</div>`)[0];
+                popup_45bfe59364d275d0e57e8d252dd34eb4.setContent(html_42f6e010a7a8e35ba92cffd8e6d7112a);
+            
+        
+
+        marker_70f31fd9c3289dbb622b6effb79d40f1.bindPopup(popup_45bfe59364d275d0e57e8d252dd34eb4)
+        ;
+
+        
+    
+    
+            var marker_75222da78d6d4d25c35eba2ba87f8c1c = L.marker(
+                [22.863778386820833, -81.1895023051932],
+                {
+}
+            ).addTo(map_be204cfc96cee5b6c399fc96badf4454);
+        
+    
+            var icon_1d33e3726741b248a5053a919ea40c3d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_75222da78d6d4d25c35eba2ba87f8c1c.setIcon(icon_1d33e3726741b248a5053a919ea40c3d);
+        
+    
+        var popup_354704f9c54fb8b8f4035dbf4b94dac1 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_fd3714e9c958597edd16e03a800e4b9f = $(`<div id="html_fd3714e9c958597edd16e03a800e4b9f" style="width: 100.0%; height: 100.0%;"><strong>Carlos Rojas</strong><br>Bloque: 1<br>Circuito: 4819<br>Consumo Mañana: 0.9 MWh<br>Consumo Tarde: 1.5 MWh<br>Consumo Noche: 1.5 MWh</div>`)[0];
+                popup_354704f9c54fb8b8f4035dbf4b94dac1.setContent(html_fd3714e9c958597edd16e03a800e4b9f);
+            
+        
+
+        marker_75222da78d6d4d25c35eba2ba87f8c1c.bindPopup(popup_354704f9c54fb8b8f4035dbf4b94dac1)
+        ;
+
+        
+    
+    
+            var marker_94a0ac0e872b6028a91906ac49d51f9e = L.marker(
+                [22.58366741649121, -81.23337397565645],
+                {
+}
+            ).addTo(map_be204cfc96cee5b6c399fc96badf4454);
+        
+    
+            var icon_7f16811cd95e0ae995c722731619a1c9 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_94a0ac0e872b6028a91906ac49d51f9e.setIcon(icon_7f16811cd95e0ae995c722731619a1c9);
+        
+    
+        var popup_7d3b77cf5f86164fd8368dfe06db879a = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_eaa9452201caee7401e571fe89c23f5b = $(`<div id="html_eaa9452201caee7401e571fe89c23f5b" style="width: 100.0%; height: 100.0%;"><strong>Agramonte</strong><br>Bloque: 1<br>Circuito: 4072<br>Consumo Mañana: 1.2 MWh<br>Consumo Tarde: 2.4 MWh<br>Consumo Noche: 1.6 MWh</div>`)[0];
+                popup_7d3b77cf5f86164fd8368dfe06db879a.setContent(html_eaa9452201caee7401e571fe89c23f5b);
+            
+        
+
+        marker_94a0ac0e872b6028a91906ac49d51f9e.bindPopup(popup_7d3b77cf5f86164fd8368dfe06db879a)
+        ;
+
+        
+    
+    
+            var marker_a4db41ab74493443491706fce9fb422c = L.marker(
+                [22.6756821618337, -81.1168747423136],
+                {
+}
+            ).addTo(map_be204cfc96cee5b6c399fc96badf4454);
+        
+    
+            var icon_c20afe132c72a69b0f7907115b740b74 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_a4db41ab74493443491706fce9fb422c.setIcon(icon_c20afe132c72a69b0f7907115b740b74);
+        
+    
+        var popup_9642f03b9b2b58ee82de9c8e960b8ed4 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_eabeb40f5504af23cb372c5dac097ca8 = $(`<div id="html_eabeb40f5504af23cb372c5dac097ca8" style="width: 100.0%; height: 100.0%;"><strong>San Joaquín</strong><br>Bloque: 4<br>Circuito: 4470<br>Consumo Mañana: 1.5 MWh<br>Consumo Tarde: 2.2 MWh<br>Consumo Noche: 1.6 MWh</div>`)[0];
+                popup_9642f03b9b2b58ee82de9c8e960b8ed4.setContent(html_eabeb40f5504af23cb372c5dac097ca8);
+            
+        
+
+        marker_a4db41ab74493443491706fce9fb422c.bindPopup(popup_9642f03b9b2b58ee82de9c8e960b8ed4)
+        ;
+
+        
+    
+    
+            var marker_ee9800d30036629364d4b44353485122 = L.marker(
+                [22.5915503108948, -81.24383112692765],
+                {
+}
+            ).addTo(map_be204cfc96cee5b6c399fc96badf4454);
+        
+    
+            var icon_a6de65337d04bf8a486aa542c88b5eab = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_ee9800d30036629364d4b44353485122.setIcon(icon_a6de65337d04bf8a486aa542c88b5eab);
+        
+    
+        var popup_5938a2f97c8590bb9ddf0085a82dcaaf = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_aa384e41383305c1720b938a33babc0a = $(`<div id="html_aa384e41383305c1720b938a33babc0a" style="width: 100.0%; height: 100.0%;"><strong>Torriente</strong><br>Bloque: 4<br>Circuito: 4470<br>Consumo Mañana: 1.5 MWh<br>Consumo Tarde: 2.2 MWh<br>Consumo Noche: 1.6 MWh</div>`)[0];
+                popup_5938a2f97c8590bb9ddf0085a82dcaaf.setContent(html_aa384e41383305c1720b938a33babc0a);
+            
+        
+
+        marker_ee9800d30036629364d4b44353485122.bindPopup(popup_5938a2f97c8590bb9ddf0085a82dcaaf)
+        ;
+
+        
+    
+    
+            var marker_2318ba74388d46e88cb87da0b428c301 = L.marker(
+                [22.74488595042953, -81.19413443860964],
+                {
+}
+            ).addTo(map_be204cfc96cee5b6c399fc96badf4454);
+        
+    
+            var icon_5d150c02c00cdc63fcfd2fcd501d2c24 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_2318ba74388d46e88cb87da0b428c301.setIcon(icon_5d150c02c00cdc63fcfd2fcd501d2c24);
+        
+    
+        var popup_cc2f98e925e37f6cf9b95072b64f0ba0 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_723e5df3d4b5063bd8470b850ef5f8e2 = $(`<div id="html_723e5df3d4b5063bd8470b850ef5f8e2" style="width: 100.0%; height: 100.0%;"><strong>La Carlota</strong><br>Bloque: 3<br>Circuito: 4071<br>Consumo Mañana: 1.6 MWh<br>Consumo Tarde: 2.6 MWh<br>Consumo Noche: 1.7 MWh</div>`)[0];
+                popup_cc2f98e925e37f6cf9b95072b64f0ba0.setContent(html_723e5df3d4b5063bd8470b850ef5f8e2);
+            
+        
+
+        marker_2318ba74388d46e88cb87da0b428c301.bindPopup(popup_cc2f98e925e37f6cf9b95072b64f0ba0)
+        ;
+
+        
+    
+    
+            var marker_5a25ed9cf2f0072fc14675a5bddec0a1 = L.marker(
+                [22.705132639521697, -81.20515225737573],
+                {
+}
+            ).addTo(map_be204cfc96cee5b6c399fc96badf4454);
+        
+    
+            var icon_db3a29be5f710f1ff894a2ee71f14d76 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_5a25ed9cf2f0072fc14675a5bddec0a1.setIcon(icon_db3a29be5f710f1ff894a2ee71f14d76);
+        
+    
+        var popup_a85d60b9d0b623ea363a4c0da66d10b9 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_78d2ec3c6b89c3a7fe4ec04d18dacffe = $(`<div id="html_78d2ec3c6b89c3a7fe4ec04d18dacffe" style="width: 100.0%; height: 100.0%;"><strong>La Isabel</strong><br>Bloque: 3<br>Circuito: 4071<br>Consumo Mañana: 1.6 MWh<br>Consumo Tarde: 2.6 MWh<br>Consumo Noche: 1.7 MWh</div>`)[0];
+                popup_a85d60b9d0b623ea363a4c0da66d10b9.setContent(html_78d2ec3c6b89c3a7fe4ec04d18dacffe);
+            
+        
+
+        marker_5a25ed9cf2f0072fc14675a5bddec0a1.bindPopup(popup_a85d60b9d0b623ea363a4c0da66d10b9)
+        ;
+
+        
+    
+    
+            var marker_626a41ee54f7ba69056288b671a4d3bb = L.marker(
+                [23.02744830157848, -81.58754548061958],
+                {
+}
+            ).addTo(map_be204cfc96cee5b6c399fc96badf4454);
+        
+    
+            var icon_5ec9516551a00e1b85ee7b6d36206190 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_626a41ee54f7ba69056288b671a4d3bb.setIcon(icon_5ec9516551a00e1b85ee7b6d36206190);
+        
+    
+        var popup_8adf82a3bdbe9a5b7bc2e2937e0546dc = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_c88c88ad85662c966b263b3396939a61 = $(`<div id="html_c88c88ad85662c966b263b3396939a61" style="width: 100.0%; height: 100.0%;"><strong>Matanzas La Jaiba</strong><br>Bloque: 2<br>Circuito: MI1456<br>Consumo Mañana: 1.8 MWh<br>Consumo Tarde: 1.4 MWh<br>Consumo Noche: 1.2 MWh</div>`)[0];
+                popup_8adf82a3bdbe9a5b7bc2e2937e0546dc.setContent(html_c88c88ad85662c966b263b3396939a61);
+            
+        
+
+        marker_626a41ee54f7ba69056288b671a4d3bb.bindPopup(popup_8adf82a3bdbe9a5b7bc2e2937e0546dc)
+        ;
+
+        
+    
+    
+            var marker_087fcf4e8f6b2db9b29072664f9e0372 = L.marker(
+                [23.04248220211552, -81.57841329004245],
+                {
+}
+            ).addTo(map_be204cfc96cee5b6c399fc96badf4454);
+        
+    
+            var icon_156704d1121dfdd14a619092129cf5ab = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_087fcf4e8f6b2db9b29072664f9e0372.setIcon(icon_156704d1121dfdd14a619092129cf5ab);
+        
+    
+        var popup_1c0d810c9c2b6169900507860bd05fab = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_93571628a84fcc0ba0a036f9e8b10d2d = $(`<div id="html_93571628a84fcc0ba0a036f9e8b10d2d" style="width: 100.0%; height: 100.0%;"><strong>Pueblo Nuevo</strong><br>Bloque: 4<br>Circuito: MI1504<br>Consumo Mañana: 1.6 MWh<br>Consumo Tarde: 1.6 MWh<br>Consumo Noche: 2.3 MWh</div>`)[0];
+                popup_1c0d810c9c2b6169900507860bd05fab.setContent(html_93571628a84fcc0ba0a036f9e8b10d2d);
+            
+        
+
+        marker_087fcf4e8f6b2db9b29072664f9e0372.bindPopup(popup_1c0d810c9c2b6169900507860bd05fab)
+        ;
+
+        
+    
+    
+            var marker_ee5831ac2870b907a088716a7b786d41 = L.marker(
+                [23.039070861842603, -81.56661968081066],
+                {
+}
+            ).addTo(map_be204cfc96cee5b6c399fc96badf4454);
+        
+    
+            var icon_b3a0abb56c52a0d87ebfe236c9a1fd3f = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_ee5831ac2870b907a088716a7b786d41.setIcon(icon_b3a0abb56c52a0d87ebfe236c9a1fd3f);
+        
+    
+        var popup_bea429bbced8f3dc90df5ee77db655d3 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_0503bf626975c20a31d8e186d940626c = $(`<div id="html_0503bf626975c20a31d8e186d940626c" style="width: 100.0%; height: 100.0%;"><strong>La Playa</strong><br>Bloque: 4<br>Circuito: MI1504<br>Consumo Mañana: 1.6 MWh<br>Consumo Tarde: 1.6 MWh<br>Consumo Noche: 2.3 MWh</div>`)[0];
+                popup_bea429bbced8f3dc90df5ee77db655d3.setContent(html_0503bf626975c20a31d8e186d940626c);
+            
+        
+
+        marker_ee5831ac2870b907a088716a7b786d41.bindPopup(popup_bea429bbced8f3dc90df5ee77db655d3)
+        ;
+
+        
+    
+    
+            var marker_f48ebfd05f8e54822beb00832ed4af21 = L.marker(
+                [23.02489582776818, -81.5747875195991],
+                {
+}
+            ).addTo(map_be204cfc96cee5b6c399fc96badf4454);
+        
+    
+            var icon_5388453777a1ba2f934e4a175f88728b = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_f48ebfd05f8e54822beb00832ed4af21.setIcon(icon_5388453777a1ba2f934e4a175f88728b);
+        
+    
+        var popup_d60a2bb9d8f89bd7c5330b50cb2f5da6 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_ec93ba590e15960c1f5653d57bf554a2 = $(`<div id="html_ec93ba590e15960c1f5653d57bf554a2" style="width: 100.0%; height: 100.0%;"><strong>Reparto Camilo</strong><br>Bloque: 2<br>Circuito: MI1501<br>Consumo Mañana: 2.0 MWh<br>Consumo Tarde: 2.0 MWh<br>Consumo Noche: 2.7 MWh</div>`)[0];
+                popup_d60a2bb9d8f89bd7c5330b50cb2f5da6.setContent(html_ec93ba590e15960c1f5653d57bf554a2);
+            
+        
+
+        marker_f48ebfd05f8e54822beb00832ed4af21.bindPopup(popup_d60a2bb9d8f89bd7c5330b50cb2f5da6)
+        ;
+
+        
+    
+    
+            var marker_419d7b6ed88b3407194bc105db6d968e = L.marker(
+                [23.05879394681446, -81.56394223988514],
+                {
+}
+            ).addTo(map_be204cfc96cee5b6c399fc96badf4454);
+        
+    
+            var icon_0ed7053500c747bb913c1106384083ce = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_419d7b6ed88b3407194bc105db6d968e.setIcon(icon_0ed7053500c747bb913c1106384083ce);
+        
+    
+        var popup_e6a8e673f63a7263cd25655ebea23b23 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_2a5e3e29f22b48815a76e331fd5ec808 = $(`<div id="html_2a5e3e29f22b48815a76e331fd5ec808" style="width: 100.0%; height: 100.0%;"><strong>Versalles 2</strong><br>Bloque: 2<br>Circuito: MI143<br>Consumo Mañana: 1.5 MWh<br>Consumo Tarde: 2.0 MWh<br>Consumo Noche: 2.7 MWh</div>`)[0];
+                popup_e6a8e673f63a7263cd25655ebea23b23.setContent(html_2a5e3e29f22b48815a76e331fd5ec808);
+            
+        
+
+        marker_419d7b6ed88b3407194bc105db6d968e.bindPopup(popup_e6a8e673f63a7263cd25655ebea23b23)
+        ;
+
+        
+    
+    
+            var marker_ba3069af93e5cd1e9437ab1dd446f5ea = L.marker(
+                [23.038147922244573, -81.52700619645977],
+                {
+}
+            ).addTo(map_be204cfc96cee5b6c399fc96badf4454);
+        
+    
+            var icon_5097b2257e356985450300978456c6b8 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_ba3069af93e5cd1e9437ab1dd446f5ea.setIcon(icon_5097b2257e356985450300978456c6b8);
+        
+    
+        var popup_0db2c291863f580b86846b67383c2934 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_5d3557ed9b03470d37e4afbcf95c9e3b = $(`<div id="html_5d3557ed9b03470d37e4afbcf95c9e3b" style="width: 100.0%; height: 100.0%;"><strong>Peñas Altas</strong><br>Bloque: 1<br>Circuito: MI1506<br>Consumo Mañana: 2.5 MWh<br>Consumo Tarde: 2.0 MWh<br>Consumo Noche: 2.8 MWh</div>`)[0];
+                popup_0db2c291863f580b86846b67383c2934.setContent(html_5d3557ed9b03470d37e4afbcf95c9e3b);
+            
+        
+
+        marker_ba3069af93e5cd1e9437ab1dd446f5ea.bindPopup(popup_0db2c291863f580b86846b67383c2934)
+        ;
+
+        
+    
+    
+            var marker_29aaf4fa1b52d058834c75405ab87849 = L.marker(
+                [22.919102147398696, -81.54512499502853],
+                {
+}
+            ).addTo(map_be204cfc96cee5b6c399fc96badf4454);
+        
+    
+            var icon_fb6e4ab82b6f12d8a0b9caf1799d2067 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_29aaf4fa1b52d058834c75405ab87849.setIcon(icon_fb6e4ab82b6f12d8a0b9caf1799d2067);
+        
+    
+        var popup_9b681b31627fda3b6312c0a25dea0062 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_5ec29349ed9f38687a370676e2171656 = $(`<div id="html_5ec29349ed9f38687a370676e2171656" style="width: 100.0%; height: 100.0%;"><strong>Cidra</strong><br>Bloque: 4<br>Circuito: 4945<br>Consumo Mañana: 2.8 MWh<br>Consumo Tarde: 3.6 MWh<br>Consumo Noche: 3.1 MWh</div>`)[0];
+                popup_9b681b31627fda3b6312c0a25dea0062.setContent(html_5ec29349ed9f38687a370676e2171656);
+            
+        
+
+        marker_29aaf4fa1b52d058834c75405ab87849.bindPopup(popup_9b681b31627fda3b6312c0a25dea0062)
+        ;
+
+        
+    
+    
+            var marker_5c292d0c9a38bb1893e1e0e669628963 = L.marker(
+                [22.8632516486391, -81.54936080313838],
+                {
+}
+            ).addTo(map_be204cfc96cee5b6c399fc96badf4454);
+        
+    
+            var icon_f191cb7110ae48017e248cfd26ef6b0d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_5c292d0c9a38bb1893e1e0e669628963.setIcon(icon_f191cb7110ae48017e248cfd26ef6b0d);
+        
+    
+        var popup_c598e7d9d5ab8e4cafd22bb16699a0cc = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_2b23f1ec9b6d8ebcfe5bc498d7d048f6 = $(`<div id="html_2b23f1ec9b6d8ebcfe5bc498d7d048f6" style="width: 100.0%; height: 100.0%;"><strong>Juan Gualberto Gómez</strong><br>Bloque: 4<br>Circuito: 4945<br>Consumo Mañana: 2.8 MWh<br>Consumo Tarde: 3.6 MWh<br>Consumo Noche: 3.1 MWh</div>`)[0];
+                popup_c598e7d9d5ab8e4cafd22bb16699a0cc.setContent(html_2b23f1ec9b6d8ebcfe5bc498d7d048f6);
+            
+        
+
+        marker_5c292d0c9a38bb1893e1e0e669628963.bindPopup(popup_c598e7d9d5ab8e4cafd22bb16699a0cc)
+        ;
+
+        
+    
+    
+            var marker_0e3dcb520dfb772cd494fbe70c0f526e = L.marker(
+                [22.934354809607413, -81.51420698668093],
+                {
+}
+            ).addTo(map_be204cfc96cee5b6c399fc96badf4454);
+        
+    
+            var icon_c02a89240ce90536dff1df389a38b798 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_0e3dcb520dfb772cd494fbe70c0f526e.setIcon(icon_c02a89240ce90536dff1df389a38b798);
+        
+    
+        var popup_2dc64b34b5591e742bb1b8483f777ff9 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_3f33d7322713f02c689f8823a0ed4745 = $(`<div id="html_3f33d7322713f02c689f8823a0ed4745" style="width: 100.0%; height: 100.0%;"><strong>Triunvirato</strong><br>Bloque: 4<br>Circuito: 4945<br>Consumo Mañana: 2.8 MWh<br>Consumo Tarde: 3.6 MWh<br>Consumo Noche: 3.1 MWh</div>`)[0];
+                popup_2dc64b34b5591e742bb1b8483f777ff9.setContent(html_3f33d7322713f02c689f8823a0ed4745);
+            
+        
+
+        marker_0e3dcb520dfb772cd494fbe70c0f526e.bindPopup(popup_2dc64b34b5591e742bb1b8483f777ff9)
+        ;
+
+        
+    
+    
+            var marker_1ef05d7ad3356c2c6e89f55ab2984e57 = L.marker(
+                [23.00671028751437, -81.58883491610098],
+                {
+}
+            ).addTo(map_be204cfc96cee5b6c399fc96badf4454);
+        
+    
+            var icon_079c75c624403be6140029529aa8fa97 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_1ef05d7ad3356c2c6e89f55ab2984e57.setIcon(icon_079c75c624403be6140029529aa8fa97);
+        
+    
+        var popup_5a3a30edc0aaaa1690b02244cd2b2576 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_c1e912f12a8f18c82e43126aff72e348 = $(`<div id="html_c1e912f12a8f18c82e43126aff72e348" style="width: 100.0%; height: 100.0%;"><strong>San Juan</strong><br>Bloque: 4<br>Circuito: 4945<br>Consumo Mañana: 2.8 MWh<br>Consumo Tarde: 3.6 MWh<br>Consumo Noche: 3.1 MWh</div>`)[0];
+                popup_5a3a30edc0aaaa1690b02244cd2b2576.setContent(html_c1e912f12a8f18c82e43126aff72e348);
+            
+        
+
+        marker_1ef05d7ad3356c2c6e89f55ab2984e57.bindPopup(popup_5a3a30edc0aaaa1690b02244cd2b2576)
+        ;
+
+        
+    
+    
+            var marker_a86c37f5c96f30f70b2a4a351e7a7e5d = L.marker(
+                [23.124369992237273, -81.28970195116354],
+                {
+}
+            ).addTo(map_be204cfc96cee5b6c399fc96badf4454);
+        
+    
+            var icon_561946733469b978d082db7f3271611e = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_a86c37f5c96f30f70b2a4a351e7a7e5d.setIcon(icon_561946733469b978d082db7f3271611e);
+        
+    
+        var popup_98e49c78f1901635c8a88041df6bbd90 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_47a1a9fb2a5760879c0e7d2a5513805d = $(`<div id="html_47a1a9fb2a5760879c0e7d2a5513805d" style="width: 100.0%; height: 100.0%;"><strong>Santa Marta 2</strong><br>Bloque: 1<br>Circuito: VI1510<br>Consumo Mañana: 2.0 MWh<br>Consumo Tarde: 2.8 MWh<br>Consumo Noche: 3.2 MWh</div>`)[0];
+                popup_98e49c78f1901635c8a88041df6bbd90.setContent(html_47a1a9fb2a5760879c0e7d2a5513805d);
+            
+        
+
+        marker_a86c37f5c96f30f70b2a4a351e7a7e5d.bindPopup(popup_98e49c78f1901635c8a88041df6bbd90)
+        ;
+
+        
+    
+    
+            var marker_11dcd3c7f27a50f15ad4019edf00bf3e = L.marker(
+                [23.109297126064178, -81.26771700618676],
+                {
+}
+            ).addTo(map_be204cfc96cee5b6c399fc96badf4454);
+        
+    
+            var icon_2c46cf98d9a6b76db891b83cb5ff8315 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_11dcd3c7f27a50f15ad4019edf00bf3e.setIcon(icon_2c46cf98d9a6b76db891b83cb5ff8315);
+        
+    
+        var popup_128590c6cd28c7c17e476499d4b9ae6b = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_1d655f04042b086374a4a4f9bdbc80d9 = $(`<div id="html_1d655f04042b086374a4a4f9bdbc80d9" style="width: 100.0%; height: 100.0%;"><strong>Santa Marta 3</strong><br>Bloque: 3<br>Circuito: VI1515<br>Consumo Mañana: 2.8 MWh<br>Consumo Tarde: 3.0 MWh<br>Consumo Noche: 3.5 MWh</div>`)[0];
+                popup_128590c6cd28c7c17e476499d4b9ae6b.setContent(html_1d655f04042b086374a4a4f9bdbc80d9);
+            
+        
+
+        marker_11dcd3c7f27a50f15ad4019edf00bf3e.bindPopup(popup_128590c6cd28c7c17e476499d4b9ae6b)
+        ;
+
+        
+    
+    
+            var marker_af4e3a325ac70553776e91031b1b9ca9 = L.marker(
+                [23.050229946086887, -81.59244819139334],
+                {
+}
+            ).addTo(map_be204cfc96cee5b6c399fc96badf4454);
+        
+    
+            var icon_866ac0c3769b076857758a79b34e7261 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_af4e3a325ac70553776e91031b1b9ca9.setIcon(icon_866ac0c3769b076857758a79b34e7261);
+        
+    
+        var popup_f487499d772f9afefd4a6049d3e04f34 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_fd4b56010fdf980c65ec3bce3c1629c4 = $(`<div id="html_fd4b56010fdf980c65ec3bce3c1629c4" style="width: 100.0%; height: 100.0%;"><strong>Los Mangos</strong><br>Bloque: 1<br>Circuito: MI1452<br>Consumo Mañana: 3.2 MWh<br>Consumo Tarde: 2.5 MWh<br>Consumo Noche: 3.5 MWh</div>`)[0];
+                popup_f487499d772f9afefd4a6049d3e04f34.setContent(html_fd4b56010fdf980c65ec3bce3c1629c4);
+            
+        
+
+        marker_af4e3a325ac70553776e91031b1b9ca9.bindPopup(popup_f487499d772f9afefd4a6049d3e04f34)
+        ;
+
+        
+    
+    
+            var marker_fa94b848658caa81f75b724af57301f9 = L.marker(
+                [22.72738287275684, -81.29157588597457],
+                {
+}
+            ).addTo(map_be204cfc96cee5b6c399fc96badf4454);
+        
+    
+            var icon_2b7c0b98c28d4ca203aaea4bf2ab97b2 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_fa94b848658caa81f75b724af57301f9.setIcon(icon_2b7c0b98c28d4ca203aaea4bf2ab97b2);
+        
+    
+        var popup_d06064865efe539b1af107fe8bede432 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_3fc2bb2759455d92dcf794a51db73c29 = $(`<div id="html_3fc2bb2759455d92dcf794a51db73c29" style="width: 100.0%; height: 100.0%;"><strong>Pedro Betancourt</strong><br>Bloque: 2<br>Circuito: M15660<br>Consumo Mañana: 2.5 MWh<br>Consumo Tarde: 4.2 MWh<br>Consumo Noche: 3.9 MWh</div>`)[0];
+                popup_d06064865efe539b1af107fe8bede432.setContent(html_3fc2bb2759455d92dcf794a51db73c29);
+            
+        
+
+        marker_fa94b848658caa81f75b724af57301f9.bindPopup(popup_d06064865efe539b1af107fe8bede432)
+        ;
+
+        
+    
+    
+            var marker_7734b147259f00b29fec9cfe582d5b8c = L.marker(
+                [22.740294602784182, -81.39386084881266],
+                {
+}
+            ).addTo(map_be204cfc96cee5b6c399fc96badf4454);
+        
+    
+            var icon_1275023d499f1ffd9638daff0ab7d4e6 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_7734b147259f00b29fec9cfe582d5b8c.setIcon(icon_1275023d499f1ffd9638daff0ab7d4e6);
+        
+    
+        var popup_10a2ee8adbb6ccba50b6761911b83b92 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_8723bbd249b7783ae30cd74c1e96371c = $(`<div id="html_8723bbd249b7783ae30cd74c1e96371c" style="width: 100.0%; height: 100.0%;"><strong>Guira</strong><br>Bloque: 2<br>Circuito: M15660<br>Consumo Mañana: 2.5 MWh<br>Consumo Tarde: 4.2 MWh<br>Consumo Noche: 3.9 MWh</div>`)[0];
+                popup_10a2ee8adbb6ccba50b6761911b83b92.setContent(html_8723bbd249b7783ae30cd74c1e96371c);
+            
+        
+
+        marker_7734b147259f00b29fec9cfe582d5b8c.bindPopup(popup_10a2ee8adbb6ccba50b6761911b83b92)
+        ;
+
+        
+    
+    
+            var marker_0feece6fc195ebdcc60e055396061867 = L.marker(
+                [22.948962653266598, -80.9242287801834],
+                {
+}
+            ).addTo(map_be204cfc96cee5b6c399fc96badf4454);
+        
+    
+            var icon_d5e44bafe297bb63f134c8cc990d9279 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_0feece6fc195ebdcc60e055396061867.setIcon(icon_d5e44bafe297bb63f134c8cc990d9279);
+        
+    
+        var popup_5c004723207b71763e3a9549e6511d83 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_3b6e848a8168ad76cd11e1c8176560cc = $(`<div id="html_3b6e848a8168ad76cd11e1c8176560cc" style="width: 100.0%; height: 100.0%;"><strong>Martí</strong><br>Bloque: 4<br>Circuito: 4604<br>Consumo Mañana: 4.8 MWh<br>Consumo Tarde: 3.5 MWh<br>Consumo Noche: 3.9 MWh</div>`)[0];
+                popup_5c004723207b71763e3a9549e6511d83.setContent(html_3b6e848a8168ad76cd11e1c8176560cc);
+            
+        
+
+        marker_0feece6fc195ebdcc60e055396061867.bindPopup(popup_5c004723207b71763e3a9549e6511d83)
+        ;
+
+        
+    
+    
+            var marker_0a18f0353f76022bb0bf019818a46d71 = L.marker(
+                [22.949760198139057, -80.85263146548722],
+                {
+}
+            ).addTo(map_be204cfc96cee5b6c399fc96badf4454);
+        
+    
+            var icon_f037b6a5f51ce72e4e7ce50f9da71e66 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_0a18f0353f76022bb0bf019818a46d71.setIcon(icon_f037b6a5f51ce72e4e7ce50f9da71e66);
+        
+    
+        var popup_ac70129e05efbd7ef7030631b26d6250 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_24c656b9907adad381c9cd8f2cc45b29 = $(`<div id="html_24c656b9907adad381c9cd8f2cc45b29" style="width: 100.0%; height: 100.0%;"><strong>Itabo</strong><br>Bloque: 4<br>Circuito: 4604<br>Consumo Mañana: 4.8 MWh<br>Consumo Tarde: 3.5 MWh<br>Consumo Noche: 3.9 MWh</div>`)[0];
+                popup_ac70129e05efbd7ef7030631b26d6250.setContent(html_24c656b9907adad381c9cd8f2cc45b29);
+            
+        
+
+        marker_0a18f0353f76022bb0bf019818a46d71.bindPopup(popup_ac70129e05efbd7ef7030631b26d6250)
+        ;
+
+        
+    
+    
+            var marker_eee599ebce10e82d3387413bef881584 = L.marker(
+                [22.978202890458874, -80.7784358611448],
+                {
+}
+            ).addTo(map_be204cfc96cee5b6c399fc96badf4454);
+        
+    
+            var icon_36b206883f80a9cee7b7f19ceb7e0aa9 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_eee599ebce10e82d3387413bef881584.setIcon(icon_36b206883f80a9cee7b7f19ceb7e0aa9);
+        
+    
+        var popup_432dd6c35bd915177f817fd80a156adf = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_4abfbd684326ddb1706112ba29a8ca76 = $(`<div id="html_4abfbd684326ddb1706112ba29a8ca76" style="width: 100.0%; height: 100.0%;"><strong>Hoyo Colorado</strong><br>Bloque: 4<br>Circuito: 4604<br>Consumo Mañana: 4.8 MWh<br>Consumo Tarde: 3.5 MWh<br>Consumo Noche: 3.9 MWh</div>`)[0];
+                popup_432dd6c35bd915177f817fd80a156adf.setContent(html_4abfbd684326ddb1706112ba29a8ca76);
+            
+        
+
+        marker_eee599ebce10e82d3387413bef881584.bindPopup(popup_432dd6c35bd915177f817fd80a156adf)
+        ;
+
+        
+    
+    
+            var marker_eb1b50d88f821e1351485de5602f6fae = L.marker(
+                [22.51901229231362, -81.13252561574002],
+                {
+}
+            ).addTo(map_be204cfc96cee5b6c399fc96badf4454);
+        
+    
+            var icon_1176530259a1eee1a8e00ba23dd27019 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_eb1b50d88f821e1351485de5602f6fae.setIcon(icon_1176530259a1eee1a8e00ba23dd27019);
+        
+    
+        var popup_f55acd9400b260a9e3447ab07bd94fbd = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_87cf5b08a0c06c4ec93ec7009c85f9a1 = $(`<div id="html_87cf5b08a0c06c4ec93ec7009c85f9a1" style="width: 100.0%; height: 100.0%;"><strong>Jaguey C 1 y 2</strong><br>Bloque: 1<br>Circuito: 4480<br>Consumo Mañana: 3.2 MWh<br>Consumo Tarde: 4.3 MWh<br>Consumo Noche: 4.2 MWh</div>`)[0];
+                popup_f55acd9400b260a9e3447ab07bd94fbd.setContent(html_87cf5b08a0c06c4ec93ec7009c85f9a1);
+            
+        
+
+        marker_eb1b50d88f821e1351485de5602f6fae.bindPopup(popup_f55acd9400b260a9e3447ab07bd94fbd)
+        ;
+
+        
+    
+    
+            var marker_d733504dd8816c692e1640f5bbdac846 = L.marker(
+                [22.768941788677523, -81.01798229692055],
+                {
+}
+            ).addTo(map_be204cfc96cee5b6c399fc96badf4454);
+        
+    
+            var icon_d54a55a02c57a8427081cb86a0582979 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_d733504dd8816c692e1640f5bbdac846.setIcon(icon_d54a55a02c57a8427081cb86a0582979);
+        
+    
+        var popup_700937fdb52f7b7004de089b6f49c443 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_31a65aaeab0df815237ac907ab389ce4 = $(`<div id="html_31a65aaeab0df815237ac907ab389ce4" style="width: 100.0%; height: 100.0%;"><strong>Perico</strong><br>Bloque: 1<br>Circuito: 502<br>Consumo Mañana: 2.8 MWh<br>Consumo Tarde: 3.9 MWh<br>Consumo Noche: 4.7 MWh</div>`)[0];
+                popup_700937fdb52f7b7004de089b6f49c443.setContent(html_31a65aaeab0df815237ac907ab389ce4);
+            
+        
+
+        marker_d733504dd8816c692e1640f5bbdac846.bindPopup(popup_700937fdb52f7b7004de089b6f49c443)
+        ;
+
+        
+    
+    
+            var marker_0bbddef0550bd81ee3c7b5914549fde8 = L.marker(
+                [22.810299731516057, -80.97735568283449],
+                {
+}
+            ).addTo(map_be204cfc96cee5b6c399fc96badf4454);
+        
+    
+            var icon_a33e3c5a48182c7110f16517608ca634 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_0bbddef0550bd81ee3c7b5914549fde8.setIcon(icon_a33e3c5a48182c7110f16517608ca634);
+        
+    
+        var popup_146d5283eac8f4dd73efbbedf73b8597 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_38a9478ef70bc79b85aaf9389d744656 = $(`<div id="html_38a9478ef70bc79b85aaf9389d744656" style="width: 100.0%; height: 100.0%;"><strong>Altamisal</strong><br>Bloque: 1<br>Circuito: 502<br>Consumo Mañana: 2.8 MWh<br>Consumo Tarde: 3.9 MWh<br>Consumo Noche: 4.7 MWh</div>`)[0];
+                popup_146d5283eac8f4dd73efbbedf73b8597.setContent(html_38a9478ef70bc79b85aaf9389d744656);
+            
+        
+
+        marker_0bbddef0550bd81ee3c7b5914549fde8.bindPopup(popup_146d5283eac8f4dd73efbbedf73b8597)
+        ;
+
+        
+    
+    
+            var marker_01f80250a33283e15018eac714b21fd6 = L.marker(
+                [22.762936946490775, -80.97411333164436],
+                {
+}
+            ).addTo(map_be204cfc96cee5b6c399fc96badf4454);
+        
+    
+            var icon_f26fe97499cc19b990f279becd43919b = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_01f80250a33283e15018eac714b21fd6.setIcon(icon_f26fe97499cc19b990f279becd43919b);
+        
+    
+        var popup_75534d94c1ebbcafec9ad2f3370e7867 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_62a23e531125c300ced76a3e37418574 = $(`<div id="html_62a23e531125c300ced76a3e37418574" style="width: 100.0%; height: 100.0%;"><strong>Sergio González</strong><br>Bloque: 1<br>Circuito: 502<br>Consumo Mañana: 2.8 MWh<br>Consumo Tarde: 3.9 MWh<br>Consumo Noche: 4.7 MWh</div>`)[0];
+                popup_75534d94c1ebbcafec9ad2f3370e7867.setContent(html_62a23e531125c300ced76a3e37418574);
+            
+        
+
+        marker_01f80250a33283e15018eac714b21fd6.bindPopup(popup_75534d94c1ebbcafec9ad2f3370e7867)
+        ;
+
+        
+    
+    
+            var marker_eb8f18b2dda3ba7a4a7ec96ff1fa77d5 = L.marker(
+                [23.036115828316674, -81.59488829112279],
+                {
+}
+            ).addTo(map_be204cfc96cee5b6c399fc96badf4454);
+        
+    
+            var icon_426d88cff2e0fac14f1e691ab0a0296a = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_eb8f18b2dda3ba7a4a7ec96ff1fa77d5.setIcon(icon_426d88cff2e0fac14f1e691ab0a0296a);
+        
+    
+        var popup_58828ce244899b28646d32a9f501e82d = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_f5d96fe1efbdd436fe15835156da612c = $(`<div id="html_f5d96fe1efbdd436fe15835156da612c" style="width: 100.0%; height: 100.0%;"><strong>Armando Mestre</strong><br>Bloque: 1<br>Circuito: MI1451<br>Consumo Mañana: 4.5 MWh<br>Consumo Tarde: 3.5 MWh<br>Consumo Noche: 5.0 MWh</div>`)[0];
+                popup_58828ce244899b28646d32a9f501e82d.setContent(html_f5d96fe1efbdd436fe15835156da612c);
+            
+        
+
+        marker_eb8f18b2dda3ba7a4a7ec96ff1fa77d5.bindPopup(popup_58828ce244899b28646d32a9f501e82d)
+        ;
+
+        
+    
+    
+            var marker_332564b8b0b1373885cb2fcccdda243c = L.marker(
+                [23.039097821583262, -81.61267000386992],
+                {
+}
+            ).addTo(map_be204cfc96cee5b6c399fc96badf4454);
+        
+    
+            var icon_da429b43f2c4833c254e7836dca48da6 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_332564b8b0b1373885cb2fcccdda243c.setIcon(icon_da429b43f2c4833c254e7836dca48da6);
+        
+    
+        var popup_dbcd25b7f4d58beef24a52101d9f222a = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_0ffa85588f5722967c8d1c9ed9927891 = $(`<div id="html_0ffa85588f5722967c8d1c9ed9927891" style="width: 100.0%; height: 100.0%;"><strong>Quintana</strong><br>Bloque: 1<br>Circuito: MI1451<br>Consumo Mañana: 4.5 MWh<br>Consumo Tarde: 3.5 MWh<br>Consumo Noche: 5.0 MWh</div>`)[0];
+                popup_dbcd25b7f4d58beef24a52101d9f222a.setContent(html_0ffa85588f5722967c8d1c9ed9927891);
+            
+        
+
+        marker_332564b8b0b1373885cb2fcccdda243c.bindPopup(popup_dbcd25b7f4d58beef24a52101d9f222a)
+        ;
+
+        
+    
+    
+            var marker_df487678d690edb0def1b963aa302dd6 = L.marker(
+                [23.044173469142546, -81.59936953151445],
+                {
+}
+            ).addTo(map_be204cfc96cee5b6c399fc96badf4454);
+        
+    
+            var icon_6073df2c06ca6069b9bddeeea1a2d593 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_df487678d690edb0def1b963aa302dd6.setIcon(icon_6073df2c06ca6069b9bddeeea1a2d593);
+        
+    
+        var popup_b7b18bff4b2abd6bfa2b039b05c5edf0 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_113d2cacd8053bc02248332f43f88f1d = $(`<div id="html_113d2cacd8053bc02248332f43f88f1d" style="width: 100.0%; height: 100.0%;"><strong>Reparto Lozano</strong><br>Bloque: 1<br>Circuito: MI1451<br>Consumo Mañana: 4.5 MWh<br>Consumo Tarde: 3.5 MWh<br>Consumo Noche: 5.0 MWh</div>`)[0];
+                popup_b7b18bff4b2abd6bfa2b039b05c5edf0.setContent(html_113d2cacd8053bc02248332f43f88f1d);
+            
+        
+
+        marker_df487678d690edb0def1b963aa302dd6.bindPopup(popup_b7b18bff4b2abd6bfa2b039b05c5edf0)
+        ;
+
+        
+    
+    
+            var marker_a32552630a67f3812ed639a5794cd181 = L.marker(
+                [23.049979979021163, -81.59806291919709],
+                {
+}
+            ).addTo(map_be204cfc96cee5b6c399fc96badf4454);
+        
+    
+            var icon_45446dae780fa566caa42b355a118be0 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_a32552630a67f3812ed639a5794cd181.setIcon(icon_45446dae780fa566caa42b355a118be0);
+        
+    
+        var popup_0914f1ca2b38069be496b76c35dddfe6 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_96fb9218468fe32c3bd9fc8e5889bb43 = $(`<div id="html_96fb9218468fe32c3bd9fc8e5889bb43" style="width: 100.0%; height: 100.0%;"><strong>Kilómetro</strong><br>Bloque: 1<br>Circuito: MI1451<br>Consumo Mañana: 4.5 MWh<br>Consumo Tarde: 3.5 MWh<br>Consumo Noche: 5.0 MWh</div>`)[0];
+                popup_0914f1ca2b38069be496b76c35dddfe6.setContent(html_96fb9218468fe32c3bd9fc8e5889bb43);
+            
+        
+
+        marker_a32552630a67f3812ed639a5794cd181.bindPopup(popup_0914f1ca2b38069be496b76c35dddfe6)
+        ;
+
+        
+    
+    
+            var marker_686235a17d02909ecfa95c20ffa680f9 = L.marker(
+                [23.03373621899635, -81.53296609871579],
+                {
+}
+            ).addTo(map_be204cfc96cee5b6c399fc96badf4454);
+        
+    
+            var icon_e866c6bc46cf5fcdd300402f8a17354e = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_686235a17d02909ecfa95c20ffa680f9.setIcon(icon_e866c6bc46cf5fcdd300402f8a17354e);
+        
+    
+        var popup_a5ab477efa6d0e66de384ae590abbe2b = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_63b8b7940cd6eeab4900839e11566746 = $(`<div id="html_63b8b7940cd6eeab4900839e11566746" style="width: 100.0%; height: 100.0%;"><strong>Reparto Iglesias</strong><br>Bloque: 3<br>Circuito: MI1505<br>Consumo Mañana: 5.1 MWh<br>Consumo Tarde: 3.7 MWh<br>Consumo Noche: 5.2 MWh</div>`)[0];
+                popup_a5ab477efa6d0e66de384ae590abbe2b.setContent(html_63b8b7940cd6eeab4900839e11566746);
+            
+        
+
+        marker_686235a17d02909ecfa95c20ffa680f9.bindPopup(popup_a5ab477efa6d0e66de384ae590abbe2b)
+        ;
+
+        
+    
+    
+            var marker_dc9de278bd0e7687809bea58aff8e114 = L.marker(
+                [23.040018709261545, -81.52634073270553],
+                {
+}
+            ).addTo(map_be204cfc96cee5b6c399fc96badf4454);
+        
+    
+            var icon_7d6782829cf8592902a7cd4d6410b68d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_dc9de278bd0e7687809bea58aff8e114.setIcon(icon_7d6782829cf8592902a7cd4d6410b68d);
+        
+    
+        var popup_a8618490a75cd33f17c14a7d9118b5d6 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_c5b8e1b486cb2cbb9e528e8e57c2d206 = $(`<div id="html_c5b8e1b486cb2cbb9e528e8e57c2d206" style="width: 100.0%; height: 100.0%;"><strong>Reynold García</strong><br>Bloque: 3<br>Circuito: MI1505<br>Consumo Mañana: 5.1 MWh<br>Consumo Tarde: 3.7 MWh<br>Consumo Noche: 5.2 MWh</div>`)[0];
+                popup_a8618490a75cd33f17c14a7d9118b5d6.setContent(html_c5b8e1b486cb2cbb9e528e8e57c2d206);
+            
+        
+
+        marker_dc9de278bd0e7687809bea58aff8e114.bindPopup(popup_a8618490a75cd33f17c14a7d9118b5d6)
+        ;
+
+        
+    
+    
+            var marker_93a700429e6f450c6cf32cbc5d3b655c = L.marker(
+                [23.025841941042845, -81.5423542662588],
+                {
+}
+            ).addTo(map_be204cfc96cee5b6c399fc96badf4454);
+        
+    
+            var icon_9de7b4ddb0c703b5b9a139b42a446e95 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_93a700429e6f450c6cf32cbc5d3b655c.setIcon(icon_9de7b4ddb0c703b5b9a139b42a446e95);
+        
+    
+        var popup_39663634cfc3cbf5fbf632185daf7a08 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_42f90fd1b9dc9d917c087a73ddde0566 = $(`<div id="html_42f90fd1b9dc9d917c087a73ddde0566" style="width: 100.0%; height: 100.0%;"><strong>Ramal Las Cuevas</strong><br>Bloque: 3<br>Circuito: MI1505<br>Consumo Mañana: 5.1 MWh<br>Consumo Tarde: 3.7 MWh<br>Consumo Noche: 5.2 MWh</div>`)[0];
+                popup_39663634cfc3cbf5fbf632185daf7a08.setContent(html_42f90fd1b9dc9d917c087a73ddde0566);
+            
+        
+
+        marker_93a700429e6f450c6cf32cbc5d3b655c.bindPopup(popup_39663634cfc3cbf5fbf632185daf7a08)
+        ;
+
+        
+    
+    
+            var marker_3900ab9e278a1ff7339006bcca29db1e = L.marker(
+                [22.690967912799607, -80.81866014551841],
+                {
+}
+            ).addTo(map_be204cfc96cee5b6c399fc96badf4454);
+        
+    
+            var icon_d26d7e9b4b7d3d6cf92e713874ddb1ba = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_3900ab9e278a1ff7339006bcca29db1e.setIcon(icon_d26d7e9b4b7d3d6cf92e713874ddb1ba);
+        
+    
+        var popup_3fb97c5de0a625b19bf59aa4c13545d0 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_d3ba443b15c6ccb22f6ab180d05d720c = $(`<div id="html_d3ba443b15c6ccb22f6ab180d05d720c" style="width: 100.0%; height: 100.0%;"><strong>Agüica</strong><br>Bloque: 1<br>Circuito: 4935<br>Consumo Mañana: 3.0 MWh<br>Consumo Tarde: 5.2 MWh<br>Consumo Noche: 6.0 MWh</div>`)[0];
+                popup_3fb97c5de0a625b19bf59aa4c13545d0.setContent(html_d3ba443b15c6ccb22f6ab180d05d720c);
+            
+        
+
+        marker_3900ab9e278a1ff7339006bcca29db1e.bindPopup(popup_3fb97c5de0a625b19bf59aa4c13545d0)
+        ;
+
+        
+    
+    
+            var marker_9807ae147852219135056f0c65dca7a1 = L.marker(
+                [22.70163131417435, -80.86986039744619],
+                {
+}
+            ).addTo(map_be204cfc96cee5b6c399fc96badf4454);
+        
+    
+            var icon_298e815e9ad3d7589a9473febc4eac38 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_9807ae147852219135056f0c65dca7a1.setIcon(icon_298e815e9ad3d7589a9473febc4eac38);
+        
+    
+        var popup_cf84fdea45f1df4fb5241edfd028f20c = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_c7b7e82638ac7611ce066d54790d0d9d = $(`<div id="html_c7b7e82638ac7611ce066d54790d0d9d" style="width: 100.0%; height: 100.0%;"><strong>Río Piedra</strong><br>Bloque: 1<br>Circuito: 4935<br>Consumo Mañana: 3.0 MWh<br>Consumo Tarde: 5.2 MWh<br>Consumo Noche: 6.0 MWh</div>`)[0];
+                popup_cf84fdea45f1df4fb5241edfd028f20c.setContent(html_c7b7e82638ac7611ce066d54790d0d9d);
+            
+        
+
+        marker_9807ae147852219135056f0c65dca7a1.bindPopup(popup_cf84fdea45f1df4fb5241edfd028f20c)
+        ;
+
+        
+    
+    
+            var marker_66c37f24b304c6d0502602975abfa92d = L.marker(
+                [22.724174805227317, -80.90450487600478],
+                {
+}
+            ).addTo(map_be204cfc96cee5b6c399fc96badf4454);
+        
+    
+            var icon_4b02466f192f1c96548365b51012c0ee = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_66c37f24b304c6d0502602975abfa92d.setIcon(icon_4b02466f192f1c96548365b51012c0ee);
+        
+    
+        var popup_97993769317016d1346a4d1af0fdc17d = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_89503f3da881a4fb7774016dd947232f = $(`<div id="html_89503f3da881a4fb7774016dd947232f" style="width: 100.0%; height: 100.0%;"><strong>Colón</strong><br>Bloque: 1<br>Circuito: 4935<br>Consumo Mañana: 3.0 MWh<br>Consumo Tarde: 5.2 MWh<br>Consumo Noche: 6.0 MWh</div>`)[0];
+                popup_97993769317016d1346a4d1af0fdc17d.setContent(html_89503f3da881a4fb7774016dd947232f);
+            
+        
+
+        marker_66c37f24b304c6d0502602975abfa92d.bindPopup(popup_97993769317016d1346a4d1af0fdc17d)
+        ;
+
+        
+    
+    
+            var marker_e6f2d74b23ae3d99c44f73aaabaec100 = L.marker(
+                [22.7300158578189, -80.72066194550129],
+                {
+}
+            ).addTo(map_be204cfc96cee5b6c399fc96badf4454);
+        
+    
+            var icon_19860bfaaf9f271d96f9bb9e6d7b8099 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_e6f2d74b23ae3d99c44f73aaabaec100.setIcon(icon_19860bfaaf9f271d96f9bb9e6d7b8099);
+        
+    
+        var popup_ca2b2492ff21f5e4ff66cb097f0c7759 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_b395acc1c8e2d025508b7f905ff84ad5 = $(`<div id="html_b395acc1c8e2d025508b7f905ff84ad5" style="width: 100.0%; height: 100.0%;"><strong>Los Arabos</strong><br>Bloque: 1<br>Circuito: 4935<br>Consumo Mañana: 3.0 MWh<br>Consumo Tarde: 5.2 MWh<br>Consumo Noche: 6.0 MWh</div>`)[0];
+                popup_ca2b2492ff21f5e4ff66cb097f0c7759.setContent(html_b395acc1c8e2d025508b7f905ff84ad5);
+            
+        
+
+        marker_e6f2d74b23ae3d99c44f73aaabaec100.bindPopup(popup_ca2b2492ff21f5e4ff66cb097f0c7759)
+        ;
+
+        
+    
+    
+            var marker_ca2b531e1eacae5df42e1cd94115385f = L.marker(
+                [22.69479601402148, -80.59850829366262],
+                {
+}
+            ).addTo(map_be204cfc96cee5b6c399fc96badf4454);
+        
+    
+            var icon_5d053af2611be91ab795d5f363131345 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_ca2b531e1eacae5df42e1cd94115385f.setIcon(icon_5d053af2611be91ab795d5f363131345);
+        
+    
+        var popup_3f9f23ece7da69ebbd2cb0211c652a3b = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_39f2a2e21e49f4df82517f14c114bd45 = $(`<div id="html_39f2a2e21e49f4df82517f14c114bd45" style="width: 100.0%; height: 100.0%;"><strong>San Pedro</strong><br>Bloque: 1<br>Circuito: 4935<br>Consumo Mañana: 3.0 MWh<br>Consumo Tarde: 5.2 MWh<br>Consumo Noche: 6.0 MWh</div>`)[0];
+                popup_3f9f23ece7da69ebbd2cb0211c652a3b.setContent(html_39f2a2e21e49f4df82517f14c114bd45);
+            
+        
+
+        marker_ca2b531e1eacae5df42e1cd94115385f.bindPopup(popup_3f9f23ece7da69ebbd2cb0211c652a3b)
+        ;
+
+        
+    
+    
+            var marker_9c6f5d9015ae12fbce0c3b4aca34cd5c = L.marker(
+                [22.741975681738978, -80.69485532411107],
+                {
+}
+            ).addTo(map_be204cfc96cee5b6c399fc96badf4454);
+        
+    
+            var icon_a259ecdba1f191593059efcc67f2714a = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_9c6f5d9015ae12fbce0c3b4aca34cd5c.setIcon(icon_a259ecdba1f191593059efcc67f2714a);
+        
+    
+        var popup_cdaa97866f46d0122720a46b4ad3ffdf = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_8ce878c31257fc1d5db0d6a729bb0dcd = $(`<div id="html_8ce878c31257fc1d5db0d6a729bb0dcd" style="width: 100.0%; height: 100.0%;"><strong>Macagua</strong><br>Bloque: 1<br>Circuito: 4935<br>Consumo Mañana: 3.0 MWh<br>Consumo Tarde: 5.2 MWh<br>Consumo Noche: 6.0 MWh</div>`)[0];
+                popup_cdaa97866f46d0122720a46b4ad3ffdf.setContent(html_8ce878c31257fc1d5db0d6a729bb0dcd);
+            
+        
+
+        marker_9c6f5d9015ae12fbce0c3b4aca34cd5c.bindPopup(popup_cdaa97866f46d0122720a46b4ad3ffdf)
+        ;
+
+        
+    
+    
+            var marker_a8e70a8d2106bbad5282adbb8dd39728 = L.marker(
+                [22.6973193670507, -80.6911014615507],
+                {
+}
+            ).addTo(map_be204cfc96cee5b6c399fc96badf4454);
+        
+    
+            var icon_7da7ed071e767f3089c101c557f86d51 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_a8e70a8d2106bbad5282adbb8dd39728.setIcon(icon_7da7ed071e767f3089c101c557f86d51);
+        
+    
+        var popup_0f87db9204583aab566aff9a9aac7a0d = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_fc6bb8cee9d2f3ac68e18782c3ab6f9e = $(`<div id="html_fc6bb8cee9d2f3ac68e18782c3ab6f9e" style="width: 100.0%; height: 100.0%;"><strong>Batey Monte Alto</strong><br>Bloque: 1<br>Circuito: 4935<br>Consumo Mañana: 3.0 MWh<br>Consumo Tarde: 5.2 MWh<br>Consumo Noche: 6.0 MWh</div>`)[0];
+                popup_0f87db9204583aab566aff9a9aac7a0d.setContent(html_fc6bb8cee9d2f3ac68e18782c3ab6f9e);
+            
+        
+
+        marker_a8e70a8d2106bbad5282adbb8dd39728.bindPopup(popup_0f87db9204583aab566aff9a9aac7a0d)
+        ;
+
+        
+    
+    
+            var marker_577bea12dbffce90191de83936b34e97 = L.marker(
+                [22.94534913873594, -81.6760992750369],
+                {
+}
+            ).addTo(map_be204cfc96cee5b6c399fc96badf4454);
+        
+    
+            var icon_4945b85ca0485020511728e67eae84ac = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_577bea12dbffce90191de83936b34e97.setIcon(icon_4945b85ca0485020511728e67eae84ac);
+        
+    
+        var popup_14b8c14d5fd17f38bede35a7648578eb = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_fc3ee079f630d784c31522a8af3a4d1e = $(`<div id="html_fc3ee079f630d784c31522a8af3a4d1e" style="width: 100.0%; height: 100.0%;"><strong>La Paloma</strong><br>Bloque: 1<br>Circuito: 4935<br>Consumo Mañana: 3.0 MWh<br>Consumo Tarde: 5.2 MWh<br>Consumo Noche: 6.0 MWh</div>`)[0];
+                popup_14b8c14d5fd17f38bede35a7648578eb.setContent(html_fc3ee079f630d784c31522a8af3a4d1e);
+            
+        
+
+        marker_577bea12dbffce90191de83936b34e97.bindPopup(popup_14b8c14d5fd17f38bede35a7648578eb)
+        ;
+
+        
+    
+    
+            var marker_215c99d1253aca030f5bf6fa11a66cda = L.marker(
+                [22.745946166678706, -80.66466905338571],
+                {
+}
+            ).addTo(map_be204cfc96cee5b6c399fc96badf4454);
+        
+    
+            var icon_d2e5cc468f3dcf9cec830052073dfbf6 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_215c99d1253aca030f5bf6fa11a66cda.setIcon(icon_d2e5cc468f3dcf9cec830052073dfbf6);
+        
+    
+        var popup_2da0efc523a3b62b7d8eb13c5c2faab7 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_abef6108bd7e20f61b2a2c07263afbef = $(`<div id="html_abef6108bd7e20f61b2a2c07263afbef" style="width: 100.0%; height: 100.0%;"><strong>Zorrilla</strong><br>Bloque: 1<br>Circuito: 4935<br>Consumo Mañana: 3.0 MWh<br>Consumo Tarde: 5.2 MWh<br>Consumo Noche: 6.0 MWh</div>`)[0];
+                popup_2da0efc523a3b62b7d8eb13c5c2faab7.setContent(html_abef6108bd7e20f61b2a2c07263afbef);
+            
+        
+
+        marker_215c99d1253aca030f5bf6fa11a66cda.bindPopup(popup_2da0efc523a3b62b7d8eb13c5c2faab7)
+        ;
+
+        
+    
+    
+            var marker_8e312fd9120016a17e7585e1eb6b10d3 = L.marker(
+                [22.801660979839593, -81.14180483634856],
+                {
+}
+            ).addTo(map_be204cfc96cee5b6c399fc96badf4454);
+        
+    
+            var icon_02a7274bcb40d6bdeecbe750bbfb029e = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_8e312fd9120016a17e7585e1eb6b10d3.setIcon(icon_02a7274bcb40d6bdeecbe750bbfb029e);
+        
+    
+        var popup_d955b2a5a686ccd8a03f8ca4c8f4ed01 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_b844079c8f176e57cd523db84351737d = $(`<div id="html_b844079c8f176e57cd523db84351737d" style="width: 100.0%; height: 100.0%;"><strong>Gratitud</strong><br>Bloque: 3<br>Circuito: 4074<br>Consumo Mañana: 3.7 MWh<br>Consumo Tarde: 5.0 MWh<br>Consumo Noche: 6.1 MWh</div>`)[0];
+                popup_d955b2a5a686ccd8a03f8ca4c8f4ed01.setContent(html_b844079c8f176e57cd523db84351737d);
+            
+        
+
+        marker_8e312fd9120016a17e7585e1eb6b10d3.bindPopup(popup_d955b2a5a686ccd8a03f8ca4c8f4ed01)
+        ;
+
+        
+    
+    
+            var marker_37206c1e72616d66ad90884bbe9d9ce5 = L.marker(
+                [22.818925203260847, -81.01365063271169],
+                {
+}
+            ).addTo(map_be204cfc96cee5b6c399fc96badf4454);
+        
+    
+            var icon_6b507050609b5082be83ed0ddbb382e7 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_37206c1e72616d66ad90884bbe9d9ce5.setIcon(icon_6b507050609b5082be83ed0ddbb382e7);
+        
+    
+        var popup_f529de154070329ec95932153219458c = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_11dbf2ec4e2ebd7506d5b76fe517aee5 = $(`<div id="html_11dbf2ec4e2ebd7506d5b76fe517aee5" style="width: 100.0%; height: 100.0%;"><strong>Indio Hatuey</strong><br>Bloque: 3<br>Circuito: 4074<br>Consumo Mañana: 3.7 MWh<br>Consumo Tarde: 5.0 MWh<br>Consumo Noche: 6.1 MWh</div>`)[0];
+                popup_f529de154070329ec95932153219458c.setContent(html_11dbf2ec4e2ebd7506d5b76fe517aee5);
+            
+        
+
+        marker_37206c1e72616d66ad90884bbe9d9ce5.bindPopup(popup_f529de154070329ec95932153219458c)
+        ;
+
+        
+    
+    
+            var marker_2a076e0f9f61bbecb5e9803e2938825f = L.marker(
+                [22.901522971704747, -81.03201684750361],
+                {
+}
+            ).addTo(map_be204cfc96cee5b6c399fc96badf4454);
+        
+    
+            var icon_c0bf7c20759a78f09c24a5bcd4ac50b7 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_2a076e0f9f61bbecb5e9803e2938825f.setIcon(icon_c0bf7c20759a78f09c24a5bcd4ac50b7);
+        
+    
+        var popup_7db6ce8b1f0774405c34c57811471c05 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_f304fd3c64913943354249950549ae8e = $(`<div id="html_f304fd3c64913943354249950549ae8e" style="width: 100.0%; height: 100.0%;"><strong>Máximo Gómez</strong><br>Bloque: 3<br>Circuito: 4074<br>Consumo Mañana: 3.7 MWh<br>Consumo Tarde: 5.0 MWh<br>Consumo Noche: 6.1 MWh</div>`)[0];
+                popup_7db6ce8b1f0774405c34c57811471c05.setContent(html_f304fd3c64913943354249950549ae8e);
+            
+        
+
+        marker_2a076e0f9f61bbecb5e9803e2938825f.bindPopup(popup_7db6ce8b1f0774405c34c57811471c05)
+        ;
+
+        
+    
+    
+            var marker_3491e0a0ff230823c837e3e8397270ed = L.marker(
+                [22.906007981139876, -81.06260193001287],
+                {
+}
+            ).addTo(map_be204cfc96cee5b6c399fc96badf4454);
+        
+    
+            var icon_362d445ab7b34f43b2c5a218d08f7e1c = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_3491e0a0ff230823c837e3e8397270ed.setIcon(icon_362d445ab7b34f43b2c5a218d08f7e1c);
+        
+    
+        var popup_6299b1d8b4cbf5d3cacd25e7aca42e58 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_f8947cbf921861d2e033795cf2237c24 = $(`<div id="html_f8947cbf921861d2e033795cf2237c24" style="width: 100.0%; height: 100.0%;"><strong>Admiración</strong><br>Bloque: 3<br>Circuito: 4074<br>Consumo Mañana: 3.7 MWh<br>Consumo Tarde: 5.0 MWh<br>Consumo Noche: 6.1 MWh</div>`)[0];
+                popup_6299b1d8b4cbf5d3cacd25e7aca42e58.setContent(html_f8947cbf921861d2e033795cf2237c24);
+            
+        
+
+        marker_3491e0a0ff230823c837e3e8397270ed.bindPopup(popup_6299b1d8b4cbf5d3cacd25e7aca42e58)
+        ;
+
+        
+    
+    
+            var marker_c46f48a1b6397692d4b37e99c9c41c52 = L.marker(
+                [22.79441673322312, -81.53666577787332],
+                {
+}
+            ).addTo(map_be204cfc96cee5b6c399fc96badf4454);
+        
+    
+            var icon_a29d7334e01b2fc2466bfa921e06a117 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_c46f48a1b6397692d4b37e99c9c41c52.setIcon(icon_a29d7334e01b2fc2466bfa921e06a117);
+        
+    
+        var popup_504eb29871bd3002550edf57b5f1cf6b = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_5be25379a2082490141ffaa9df8c7837 = $(`<div id="html_5be25379a2082490141ffaa9df8c7837" style="width: 100.0%; height: 100.0%;"><strong>Unión de Reyes</strong><br>Bloque: 2<br>Circuito: M15670<br>Consumo Mañana: 4.4 MWh<br>Consumo Tarde: 7.6 MWh<br>Consumo Noche: 6.6 MWh</div>`)[0];
+                popup_504eb29871bd3002550edf57b5f1cf6b.setContent(html_5be25379a2082490141ffaa9df8c7837);
+            
+        
+
+        marker_c46f48a1b6397692d4b37e99c9c41c52.bindPopup(popup_504eb29871bd3002550edf57b5f1cf6b)
+        ;
+
+        
+    
+    
+            var marker_1adcb407191f985d2f4518d8e913d7f8 = L.marker(
+                [22.769795847560356, -81.57089575816494],
+                {
+}
+            ).addTo(map_be204cfc96cee5b6c399fc96badf4454);
+        
+    
+            var icon_9db8c81874aed1348cf7c817f52e7c3c = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_1adcb407191f985d2f4518d8e913d7f8.setIcon(icon_9db8c81874aed1348cf7c817f52e7c3c);
+        
+    
+        var popup_fd386300ab7b9a750c487846f4500c89 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_daeade5f991e8bfd0365a213c56c5339 = $(`<div id="html_daeade5f991e8bfd0365a213c56c5339" style="width: 100.0%; height: 100.0%;"><strong>Alacranes</strong><br>Bloque: 2<br>Circuito: M15670<br>Consumo Mañana: 4.4 MWh<br>Consumo Tarde: 7.6 MWh<br>Consumo Noche: 6.6 MWh</div>`)[0];
+                popup_fd386300ab7b9a750c487846f4500c89.setContent(html_daeade5f991e8bfd0365a213c56c5339);
+            
+        
+
+        marker_1adcb407191f985d2f4518d8e913d7f8.bindPopup(popup_fd386300ab7b9a750c487846f4500c89)
+        ;
+
+        
+    
+    
+            var marker_33e96b8aabbd844385535672f3da6177 = L.marker(
+                [22.80851578407912, -81.62746019368231],
+                {
+}
+            ).addTo(map_be204cfc96cee5b6c399fc96badf4454);
+        
+    
+            var icon_3a33e45df9acb2bfdb30c68dcae0aeee = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_33e96b8aabbd844385535672f3da6177.setIcon(icon_3a33e45df9acb2bfdb30c68dcae0aeee);
+        
+    
+        var popup_fd0bdbc9577516be2d756318e916cb48 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_c58f1bb418a4a7dc4fa1d3dd7a185aaa = $(`<div id="html_c58f1bb418a4a7dc4fa1d3dd7a185aaa" style="width: 100.0%; height: 100.0%;"><strong>Bermeja</strong><br>Bloque: 2<br>Circuito: M15670<br>Consumo Mañana: 4.4 MWh<br>Consumo Tarde: 7.6 MWh<br>Consumo Noche: 6.6 MWh</div>`)[0];
+                popup_fd0bdbc9577516be2d756318e916cb48.setContent(html_c58f1bb418a4a7dc4fa1d3dd7a185aaa);
+            
+        
+
+        marker_33e96b8aabbd844385535672f3da6177.bindPopup(popup_fd0bdbc9577516be2d756318e916cb48)
+        ;
+
+        
+    
+    
+            var marker_6288f4ec032b1e8aaa62fad0ba8e1525 = L.marker(
+                [22.840289246130556, -81.67649888885187],
+                {
+}
+            ).addTo(map_be204cfc96cee5b6c399fc96badf4454);
+        
+    
+            var icon_4e155d0d4c578d6cf2f6ad5b7cf34952 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_6288f4ec032b1e8aaa62fad0ba8e1525.setIcon(icon_4e155d0d4c578d6cf2f6ad5b7cf34952);
+        
+    
+        var popup_7f9947d22e122d3310266ffe869ea693 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_ee09ebc92414c5fb6627932f498973a8 = $(`<div id="html_ee09ebc92414c5fb6627932f498973a8" style="width: 100.0%; height: 100.0%;"><strong>Cabezas</strong><br>Bloque: 2<br>Circuito: M15670<br>Consumo Mañana: 4.4 MWh<br>Consumo Tarde: 7.6 MWh<br>Consumo Noche: 6.6 MWh</div>`)[0];
+                popup_7f9947d22e122d3310266ffe869ea693.setContent(html_ee09ebc92414c5fb6627932f498973a8);
+            
+        
+
+        marker_6288f4ec032b1e8aaa62fad0ba8e1525.bindPopup(popup_7f9947d22e122d3310266ffe869ea693)
+        ;
+
+        
+    
+    
+            var marker_fd920aabf349e1e77ddd198e9dcab056 = L.marker(
+                [22.761960997436578, -81.4487845495697],
+                {
+}
+            ).addTo(map_be204cfc96cee5b6c399fc96badf4454);
+        
+    
+            var icon_b61f074eeafb6fc7be487cf50a17646b = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_fd920aabf349e1e77ddd198e9dcab056.setIcon(icon_b61f074eeafb6fc7be487cf50a17646b);
+        
+    
+        var popup_27e3355144ba278ea33def0753bb2568 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_0e33f6fabec0610b08d073d2211cbe17 = $(`<div id="html_0e33f6fabec0610b08d073d2211cbe17" style="width: 100.0%; height: 100.0%;"><strong>Bolondrón</strong><br>Bloque: 2<br>Circuito: M15670<br>Consumo Mañana: 4.4 MWh<br>Consumo Tarde: 7.6 MWh<br>Consumo Noche: 6.6 MWh</div>`)[0];
+                popup_27e3355144ba278ea33def0753bb2568.setContent(html_0e33f6fabec0610b08d073d2211cbe17);
+            
+        
+
+        marker_fd920aabf349e1e77ddd198e9dcab056.bindPopup(popup_27e3355144ba278ea33def0753bb2568)
+        ;
+
+        
+    
+    
+            var marker_ebb79a7a123fc8e978288faa9ae85018 = L.marker(
+                [22.813622146568857, -81.40207862541845],
+                {
+}
+            ).addTo(map_be204cfc96cee5b6c399fc96badf4454);
+        
+    
+            var icon_21e62f3ec20c92d7b60eac3af4f05bdb = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_ebb79a7a123fc8e978288faa9ae85018.setIcon(icon_21e62f3ec20c92d7b60eac3af4f05bdb);
+        
+    
+        var popup_b2e45114db6014a259cfb2a1587e1bcd = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_779aae31e943776b842d8b1c1873406d = $(`<div id="html_779aae31e943776b842d8b1c1873406d" style="width: 100.0%; height: 100.0%;"><strong>Manolito</strong><br>Bloque: 2<br>Circuito: M15670<br>Consumo Mañana: 4.4 MWh<br>Consumo Tarde: 7.6 MWh<br>Consumo Noche: 6.6 MWh</div>`)[0];
+                popup_b2e45114db6014a259cfb2a1587e1bcd.setContent(html_779aae31e943776b842d8b1c1873406d);
+            
+        
+
+        marker_ebb79a7a123fc8e978288faa9ae85018.bindPopup(popup_b2e45114db6014a259cfb2a1587e1bcd)
+        ;
+
+        
+    
+    
+            var marker_7d5df674f4bbaa406930b9512ef4fbd4 = L.marker(
+                [22.586812953651123, -80.91378550206123],
+                {
+}
+            ).addTo(map_be204cfc96cee5b6c399fc96badf4454);
+        
+    
+            var icon_f2974a2d438261ca9d72933b61fb8087 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_7d5df674f4bbaa406930b9512ef4fbd4.setIcon(icon_f2974a2d438261ca9d72933b61fb8087);
+        
+    
+        var popup_3e9b0812999ad6ed1ee82775934037a8 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_3cdae6605eebb1910e46894e403ef3d8 = $(`<div id="html_3cdae6605eebb1910e46894e403ef3d8" style="width: 100.0%; height: 100.0%;"><strong>Manguito</strong><br>Bloque: 3<br>Circuito: 501<br>Consumo Mañana: 4.6 MWh<br>Consumo Tarde: 6.0 MWh<br>Consumo Noche: 7.4 MWh</div>`)[0];
+                popup_3e9b0812999ad6ed1ee82775934037a8.setContent(html_3cdae6605eebb1910e46894e403ef3d8);
+            
+        
+
+        marker_7d5df674f4bbaa406930b9512ef4fbd4.bindPopup(popup_3e9b0812999ad6ed1ee82775934037a8)
+        ;
+
+        
+    
+    
+            var marker_9c8fe3503be47a7b97179dc66df4483c = L.marker(
+                [22.535912661765458, -80.91371982870545],
+                {
+}
+            ).addTo(map_be204cfc96cee5b6c399fc96badf4454);
+        
+    
+            var icon_205036de9a4d73f1e4ad18bfe23101b6 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_9c8fe3503be47a7b97179dc66df4483c.setIcon(icon_205036de9a4d73f1e4ad18bfe23101b6);
+        
+    
+        var popup_0cabc72a03fd3f406aeea247872779cc = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_01e594100ae2634c399e038cedf3e167 = $(`<div id="html_01e594100ae2634c399e038cedf3e167" style="width: 100.0%; height: 100.0%;"><strong>Calimete</strong><br>Bloque: 3<br>Circuito: 501<br>Consumo Mañana: 4.6 MWh<br>Consumo Tarde: 6.0 MWh<br>Consumo Noche: 7.4 MWh</div>`)[0];
+                popup_0cabc72a03fd3f406aeea247872779cc.setContent(html_01e594100ae2634c399e038cedf3e167);
+            
+        
+
+        marker_9c8fe3503be47a7b97179dc66df4483c.bindPopup(popup_0cabc72a03fd3f406aeea247872779cc)
+        ;
+
+        
+    
+    
+            var marker_dff4c9876a3528cd3af1fe6c59451265 = L.marker(
+                [22.47828700128213, -80.91371982870545],
+                {
+}
+            ).addTo(map_be204cfc96cee5b6c399fc96badf4454);
+        
+    
+            var icon_dd01df78e46d7762f274e238c2a9282a = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_dff4c9876a3528cd3af1fe6c59451265.setIcon(icon_dd01df78e46d7762f274e238c2a9282a);
+        
+    
+        var popup_e9503b8e1f8fac6b067ccf7809d8f61a = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_87d816b3fd7c3c0418678327b8e6216c = $(`<div id="html_87d816b3fd7c3c0418678327b8e6216c" style="width: 100.0%; height: 100.0%;"><strong>Amarillas</strong><br>Bloque: 3<br>Circuito: 501<br>Consumo Mañana: 4.6 MWh<br>Consumo Tarde: 6.0 MWh<br>Consumo Noche: 7.4 MWh</div>`)[0];
+                popup_e9503b8e1f8fac6b067ccf7809d8f61a.setContent(html_87d816b3fd7c3c0418678327b8e6216c);
+            
+        
+
+        marker_dff4c9876a3528cd3af1fe6c59451265.bindPopup(popup_e9503b8e1f8fac6b067ccf7809d8f61a)
+        ;
+
+        
+    
+    
+            var marker_0c091606417465d87bcdb464f43379f2 = L.marker(
+                [22.61886507568071, -80.88992877861233],
+                {
+}
+            ).addTo(map_be204cfc96cee5b6c399fc96badf4454);
+        
+    
+            var icon_96140d92c4f3222dbafa4e43f227f5bf = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_0c091606417465d87bcdb464f43379f2.setIcon(icon_96140d92c4f3222dbafa4e43f227f5bf);
+        
+    
+        var popup_5a5bbaaf63c4a4e56b5e2516617201ea = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_cc5d83d0493a1d5951058de2c19d8d6b = $(`<div id="html_cc5d83d0493a1d5951058de2c19d8d6b" style="width: 100.0%; height: 100.0%;"><strong>Seis de agosto</strong><br>Bloque: 3<br>Circuito: 501<br>Consumo Mañana: 4.6 MWh<br>Consumo Tarde: 6.0 MWh<br>Consumo Noche: 7.4 MWh</div>`)[0];
+                popup_5a5bbaaf63c4a4e56b5e2516617201ea.setContent(html_cc5d83d0493a1d5951058de2c19d8d6b);
+            
+        
+
+        marker_0c091606417465d87bcdb464f43379f2.bindPopup(popup_5a5bbaaf63c4a4e56b5e2516617201ea)
+        ;
+
+        
+    
+    
+            var marker_ea67517c681dfd77c4718e896487e50e = L.marker(
+                [22.951860434577302, -81.41237355254145],
+                {
+}
+            ).addTo(map_be204cfc96cee5b6c399fc96badf4454);
+        
+    
+            var icon_403a4c3dbde01997f24230deb7d2432b = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_ea67517c681dfd77c4718e896487e50e.setIcon(icon_403a4c3dbde01997f24230deb7d2432b);
+        
+    
+        var popup_3e65ce6a53e4b5d5bd42ec67ceaab552 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_21509db3370a0aa1943419820d106506 = $(`<div id="html_21509db3370a0aa1943419820d106506" style="width: 100.0%; height: 100.0%;"><strong>Limonar</strong><br>Bloque: 2<br>Circuito: 4220<br>Consumo Mañana: 5.1 MWh<br>Consumo Tarde: 7.0 MWh<br>Consumo Noche: 8.0 MWh</div>`)[0];
+                popup_3e65ce6a53e4b5d5bd42ec67ceaab552.setContent(html_21509db3370a0aa1943419820d106506);
+            
+        
+
+        marker_ea67517c681dfd77c4718e896487e50e.bindPopup(popup_3e65ce6a53e4b5d5bd42ec67ceaab552)
+        ;
+
+        
+    
+    
+            var marker_571707727b4fa298a81670c6989ec547 = L.marker(
+                [22.891035976290848, -81.41625524956046],
+                {
+}
+            ).addTo(map_be204cfc96cee5b6c399fc96badf4454);
+        
+    
+            var icon_5f39c0b0303222201084668db270e2b5 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_571707727b4fa298a81670c6989ec547.setIcon(icon_5f39c0b0303222201084668db270e2b5);
+        
+    
+        var popup_3b83f8c88aeae18212963e9ae4b17014 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_f8e12e50e10532db7c5779ffa123f8ad = $(`<div id="html_f8e12e50e10532db7c5779ffa123f8ad" style="width: 100.0%; height: 100.0%;"><strong>Fructuoso Rodríguez</strong><br>Bloque: 2<br>Circuito: 4220<br>Consumo Mañana: 5.1 MWh<br>Consumo Tarde: 7.0 MWh<br>Consumo Noche: 8.0 MWh</div>`)[0];
+                popup_3b83f8c88aeae18212963e9ae4b17014.setContent(html_f8e12e50e10532db7c5779ffa123f8ad);
+            
+        
+
+        marker_571707727b4fa298a81670c6989ec547.bindPopup(popup_3b83f8c88aeae18212963e9ae4b17014)
+        ;
+
+        
+    
+    
+            var marker_1eb6b13ae48754fccee9c1cad73ac689 = L.marker(
+                [22.986209279416606, -81.36520172997263],
+                {
+}
+            ).addTo(map_be204cfc96cee5b6c399fc96badf4454);
+        
+    
+            var icon_074796a0cf9bdfb06f0aef7473c097da = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_1eb6b13ae48754fccee9c1cad73ac689.setIcon(icon_074796a0cf9bdfb06f0aef7473c097da);
+        
+    
+        var popup_5f69cdf1436749f7dfbaad3a759b2d59 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_8a2e831edfc4a744c391b97939d0f127 = $(`<div id="html_8a2e831edfc4a744c391b97939d0f127" style="width: 100.0%; height: 100.0%;"><strong>Horacio Rodríguez</strong><br>Bloque: 2<br>Circuito: 4220<br>Consumo Mañana: 5.1 MWh<br>Consumo Tarde: 7.0 MWh<br>Consumo Noche: 8.0 MWh</div>`)[0];
+                popup_5f69cdf1436749f7dfbaad3a759b2d59.setContent(html_8a2e831edfc4a744c391b97939d0f127);
+            
+        
+
+        marker_1eb6b13ae48754fccee9c1cad73ac689.bindPopup(popup_5f69cdf1436749f7dfbaad3a759b2d59)
+        ;
+
+        
+    
+    
+            var marker_28feeeb69541a2825af78510107d3405 = L.marker(
+                [22.854336287210895, -81.33362488404366],
+                {
+}
+            ).addTo(map_be204cfc96cee5b6c399fc96badf4454);
+        
+    
+            var icon_50fcf1010a3d8b0fec2a9a045feb3fcb = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_28feeeb69541a2825af78510107d3405.setIcon(icon_50fcf1010a3d8b0fec2a9a045feb3fcb);
+        
+    
+        var popup_40524359d191541dfe787373f921d2b1 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_b06da1f89e74a5b926c94913710905e4 = $(`<div id="html_b06da1f89e74a5b926c94913710905e4" style="width: 100.0%; height: 100.0%;"><strong>San Miguel de los Baños</strong><br>Bloque: 2<br>Circuito: 4220<br>Consumo Mañana: 5.1 MWh<br>Consumo Tarde: 7.0 MWh<br>Consumo Noche: 8.0 MWh</div>`)[0];
+                popup_40524359d191541dfe787373f921d2b1.setContent(html_b06da1f89e74a5b926c94913710905e4);
+            
+        
+
+        marker_28feeeb69541a2825af78510107d3405.bindPopup(popup_40524359d191541dfe787373f921d2b1)
+        ;
+
+        
+    
+    
+            var marker_5cb25c2956913d9ad754fd76beb7ef3d = L.marker(
+                [22.968932090127886, -81.26388732897551],
+                {
+}
+            ).addTo(map_be204cfc96cee5b6c399fc96badf4454);
+        
+    
+            var icon_c369466afba559d218ed6a8de60884fd = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_5cb25c2956913d9ad754fd76beb7ef3d.setIcon(icon_c369466afba559d218ed6a8de60884fd);
+        
+    
+        var popup_a947d096502bd670890f9ec4ee5b18a3 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_36d4f6bbc3701a756f2016874af1b6f2 = $(`<div id="html_36d4f6bbc3701a756f2016874af1b6f2" style="width: 100.0%; height: 100.0%;"><strong>Ponce</strong><br>Bloque: 2<br>Circuito: 4220<br>Consumo Mañana: 5.1 MWh<br>Consumo Tarde: 7.0 MWh<br>Consumo Noche: 8.0 MWh</div>`)[0];
+                popup_a947d096502bd670890f9ec4ee5b18a3.setContent(html_36d4f6bbc3701a756f2016874af1b6f2);
+            
+        
+
+        marker_5cb25c2956913d9ad754fd76beb7ef3d.bindPopup(popup_a947d096502bd670890f9ec4ee5b18a3)
+        ;
+
+        
+    
+    
+            var marker_8ba60ab2e68f0dd103e8f18558f5f066 = L.marker(
+                [22.951160034578294, -81.20998294850517],
+                {
+}
+            ).addTo(map_be204cfc96cee5b6c399fc96badf4454);
+        
+    
+            var icon_14bc9bb75e2f6a06210450416680fc21 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_8ba60ab2e68f0dd103e8f18558f5f066.setIcon(icon_14bc9bb75e2f6a06210450416680fc21);
+        
+    
+        var popup_80529157548846234c6f00fd10c34296 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_8a0b9096e6fec4239ed9a6e313271790 = $(`<div id="html_8a0b9096e6fec4239ed9a6e313271790" style="width: 100.0%; height: 100.0%;"><strong>Lagunillas</strong><br>Bloque: 2<br>Circuito: 4220<br>Consumo Mañana: 5.1 MWh<br>Consumo Tarde: 7.0 MWh<br>Consumo Noche: 8.0 MWh</div>`)[0];
+                popup_80529157548846234c6f00fd10c34296.setContent(html_8a0b9096e6fec4239ed9a6e313271790);
+            
+        
+
+        marker_8ba60ab2e68f0dd103e8f18558f5f066.bindPopup(popup_80529157548846234c6f00fd10c34296)
+        ;
+
+        
+    
+    
+            var marker_b621b3d62458d14a969a3a98beb5cc19 = L.marker(
+                [22.908136839946373, -81.30377827724458],
+                {
+}
+            ).addTo(map_be204cfc96cee5b6c399fc96badf4454);
+        
+    
+            var icon_b28874d7946ca47db9ac5e772f0e1c96 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_b621b3d62458d14a969a3a98beb5cc19.setIcon(icon_b28874d7946ca47db9ac5e772f0e1c96);
+        
+    
+        var popup_6cbf084ee7df4b89649994938f7a95ba = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_3e16c0123f82bca1887e4357e62b9a03 = $(`<div id="html_3e16c0123f82bca1887e4357e62b9a03" style="width: 100.0%; height: 100.0%;"><strong>Coliceo</strong><br>Bloque: 2<br>Circuito: 4220<br>Consumo Mañana: 5.1 MWh<br>Consumo Tarde: 7.0 MWh<br>Consumo Noche: 8.0 MWh</div>`)[0];
+                popup_6cbf084ee7df4b89649994938f7a95ba.setContent(html_3e16c0123f82bca1887e4357e62b9a03);
+            
+        
+
+        marker_b621b3d62458d14a969a3a98beb5cc19.bindPopup(popup_6cbf084ee7df4b89649994938f7a95ba)
+        ;
+
+        
+    
+    
+            var marker_4fde3bb0260e031c6b136c9371023c88 = L.marker(
+                [23.012909115568466, -81.23031576239933],
+                {
+}
+            ).addTo(map_be204cfc96cee5b6c399fc96badf4454);
+        
+    
+            var icon_ba23927c7a5161c8330cfded39f2548f = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_4fde3bb0260e031c6b136c9371023c88.setIcon(icon_ba23927c7a5161c8330cfded39f2548f);
+        
+    
+        var popup_f5bd98d49204bdec23b4533a5e0cd49e = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_9045f69b9edb03f37b258738974eb4e0 = $(`<div id="html_9045f69b9edb03f37b258738974eb4e0" style="width: 100.0%; height: 100.0%;"><strong>Fines</strong><br>Bloque: 2<br>Circuito: 4220<br>Consumo Mañana: 5.1 MWh<br>Consumo Tarde: 7.0 MWh<br>Consumo Noche: 8.0 MWh</div>`)[0];
+                popup_f5bd98d49204bdec23b4533a5e0cd49e.setContent(html_9045f69b9edb03f37b258738974eb4e0);
+            
+        
+
+        marker_4fde3bb0260e031c6b136c9371023c88.bindPopup(popup_f5bd98d49204bdec23b4533a5e0cd49e)
+        ;
+
+        
+    
+    
+            var marker_36579eb1cb648cd7eba875269f845acd = L.marker(
+                [23.026843770054633, -81.20494727215994],
+                {
+}
+            ).addTo(map_be204cfc96cee5b6c399fc96badf4454);
+        
+    
+            var icon_fc5ac23e5e5b2f4a964da71d2b14c44f = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_36579eb1cb648cd7eba875269f845acd.setIcon(icon_fc5ac23e5e5b2f4a964da71d2b14c44f);
+        
+    
+        var popup_a6c1662481a545aa4a9bc214755d974e = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_88530845ab29aaf83bba015d182b063a = $(`<div id="html_88530845ab29aaf83bba015d182b063a" style="width: 100.0%; height: 100.0%;"><strong>Cárdenas 5</strong><br>Bloque: 4<br>Circuito: 4427<br>Consumo Mañana: 7.6 MWh<br>Consumo Tarde: 8.4 MWh<br>Consumo Noche: 9.9 MWh</div>`)[0];
+                popup_a6c1662481a545aa4a9bc214755d974e.setContent(html_88530845ab29aaf83bba015d182b063a);
+            
+        
+
+        marker_36579eb1cb648cd7eba875269f845acd.bindPopup(popup_a6c1662481a545aa4a9bc214755d974e)
+        ;
+
+        
+    
+    
+            var marker_1253c986e781b9eba770c448d38259f5 = L.marker(
+                [22.982983639250943, -81.17111966256026],
+                {
+}
+            ).addTo(map_be204cfc96cee5b6c399fc96badf4454);
+        
+    
+            var icon_4edc0e84855d830c785ed795c734da3e = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_1253c986e781b9eba770c448d38259f5.setIcon(icon_4edc0e84855d830c785ed795c734da3e);
+        
+    
+        var popup_02f6ef69b5d946d8f61f2b68b99fc720 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_cef1bab26d1689c58f8955bb39a56c0f = $(`<div id="html_cef1bab26d1689c58f8955bb39a56c0f" style="width: 100.0%; height: 100.0%;"><strong>José Smith Comas</strong><br>Bloque: 4<br>Circuito: 4427<br>Consumo Mañana: 7.6 MWh<br>Consumo Tarde: 8.4 MWh<br>Consumo Noche: 9.9 MWh</div>`)[0];
+                popup_02f6ef69b5d946d8f61f2b68b99fc720.setContent(html_cef1bab26d1689c58f8955bb39a56c0f);
+            
+        
+
+        marker_1253c986e781b9eba770c448d38259f5.bindPopup(popup_02f6ef69b5d946d8f61f2b68b99fc720)
+        ;
+
+        
+    
+    
+            var marker_a615cf6dc64ffbe0662023e9a7b2373f = L.marker(
+                [22.726248254502423, -80.90078721674752],
+                {
+}
+            ).addTo(map_be204cfc96cee5b6c399fc96badf4454);
+        
+    
+            var icon_ea0b5a5ece89a7ec32dfadd9cc1a463b = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_a615cf6dc64ffbe0662023e9a7b2373f.setIcon(icon_ea0b5a5ece89a7ec32dfadd9cc1a463b);
+        
+    
+        var popup_b4c4c6c26fa78c4f62793f4604fa9eae = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_1cc7f2db9d20f4f25b341f6b120c4387 = $(`<div id="html_1cc7f2db9d20f4f25b341f6b120c4387" style="width: 100.0%; height: 100.0%;"><strong>Circuito no apagable Z130</strong><br>Bloque: -<br>Circuito: Z130<br>Consumo Mañana: 0.0 MWh<br>Consumo Tarde: 0.0 MWh<br>Consumo Noche: 0.0 MWh</div>`)[0];
+                popup_b4c4c6c26fa78c4f62793f4604fa9eae.setContent(html_1cc7f2db9d20f4f25b341f6b120c4387);
+            
+        
+
+        marker_a615cf6dc64ffbe0662023e9a7b2373f.bindPopup(popup_b4c4c6c26fa78c4f62793f4604fa9eae)
+        ;
+
+        
+    
+    
+            var marker_f62ba297ab8389bb28c8d35a65ad0fd0 = L.marker(
+                [22.8081716117936, -81.19884022301818],
+                {
+}
+            ).addTo(map_be204cfc96cee5b6c399fc96badf4454);
+        
+    
+            var icon_0ae907e82e2c9b73aa17b14655da616b = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_f62ba297ab8389bb28c8d35a65ad0fd0.setIcon(icon_0ae907e82e2c9b73aa17b14655da616b);
+        
+    
+        var popup_a6e3849afd49b9f6c4d71947f4248a8d = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_463cd84e2f30caf179f62aba57217e79 = $(`<div id="html_463cd84e2f30caf179f62aba57217e79" style="width: 100.0%; height: 100.0%;"><strong>Circuito no apagable JI 48</strong><br>Bloque: -<br>Circuito: JI48<br>Consumo Mañana: 0.0 MWh<br>Consumo Tarde: 0.0 MWh<br>Consumo Noche: 0.0 MWh</div>`)[0];
+                popup_a6e3849afd49b9f6c4d71947f4248a8d.setContent(html_463cd84e2f30caf179f62aba57217e79);
+            
+        
+
+        marker_f62ba297ab8389bb28c8d35a65ad0fd0.bindPopup(popup_a6e3849afd49b9f6c4d71947f4248a8d)
+        ;
+
+        
+    
+    
+            var marker_3ba3dabd51d02b689afb51a7f51aa707 = L.marker(
+                [22.52003843810695, -81.1360710543657],
+                {
+}
+            ).addTo(map_be204cfc96cee5b6c399fc96badf4454);
+        
+    
+            var icon_5c812d6a0d372a276a41e87aebd45479 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_3ba3dabd51d02b689afb51a7f51aa707.setIcon(icon_5c812d6a0d372a276a41e87aebd45479);
+        
+    
+        var popup_ef592edcb9a53503f919715c417c899c = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_143921779c4a58dc06065a2ded3adb17 = $(`<div id="html_143921779c4a58dc06065a2ded3adb17" style="width: 100.0%; height: 100.0%;"><strong>Circuito no apagable GI101</strong><br>Bloque: -<br>Circuito: GI101<br>Consumo Mañana: 0.0 MWh<br>Consumo Tarde: 0.0 MWh<br>Consumo Noche: 0.0 MWh</div>`)[0];
+                popup_ef592edcb9a53503f919715c417c899c.setContent(html_143921779c4a58dc06065a2ded3adb17);
+            
+        
+
+        marker_3ba3dabd51d02b689afb51a7f51aa707.bindPopup(popup_ef592edcb9a53503f919715c417c899c)
+        ;
+
+        
+    
+    
+            var marker_d08b214cf0d2c725e560e15ae6246911 = L.marker(
+                [23.049484475288363, -81.21909830970425],
+                {
+}
+            ).addTo(map_be204cfc96cee5b6c399fc96badf4454);
+        
+    
+            var icon_b83880fa6ee254cc2c9b511589beee8f = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_d08b214cf0d2c725e560e15ae6246911.setIcon(icon_b83880fa6ee254cc2c9b511589beee8f);
+        
+    
+        var popup_40649e29d0dd76a8a19afb13bf2d60bd = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_aec9838c9f7f5c0a2c0ce70c6b083a40 = $(`<div id="html_aec9838c9f7f5c0a2c0ce70c6b083a40" style="width: 100.0%; height: 100.0%;"><strong>Circuito no apagable CI185</strong><br>Bloque: -<br>Circuito: CI185<br>Consumo Mañana: 0.0 MWh<br>Consumo Tarde: 0.0 MWh<br>Consumo Noche: 0.0 MWh</div>`)[0];
+                popup_40649e29d0dd76a8a19afb13bf2d60bd.setContent(html_aec9838c9f7f5c0a2c0ce70c6b083a40);
+            
+        
+
+        marker_d08b214cf0d2c725e560e15ae6246911.bindPopup(popup_40649e29d0dd76a8a19afb13bf2d60bd)
+        ;
+
+        
+    
+    
+            var marker_d55e78615e11037aff3b859b35b1e1e3 = L.marker(
+                [23.034011009100126, -81.52120708912827],
+                {
+}
+            ).addTo(map_be204cfc96cee5b6c399fc96badf4454);
+        
+    
+            var icon_c10a4a20b19f32da7d867618f423484c = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_d55e78615e11037aff3b859b35b1e1e3.setIcon(icon_c10a4a20b19f32da7d867618f423484c);
+        
+    
+        var popup_eef4ea8d312ef39d867803e3d0c92599 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_62d9a91dd836da44ea6c5ed47f090ef4 = $(`<div id="html_62d9a91dd836da44ea6c5ed47f090ef4" style="width: 100.0%; height: 100.0%;"><strong>Circuito no apagable Z1183</strong><br>Bloque: -<br>Circuito: Z1183<br>Consumo Mañana: 0.0 MWh<br>Consumo Tarde: 0.0 MWh<br>Consumo Noche: 0.0 MWh</div>`)[0];
+                popup_eef4ea8d312ef39d867803e3d0c92599.setContent(html_62d9a91dd836da44ea6c5ed47f090ef4);
+            
+        
+
+        marker_d55e78615e11037aff3b859b35b1e1e3.bindPopup(popup_eef4ea8d312ef39d867803e3d0c92599)
+        ;
+
+        
+    
+    
+            var marker_a7581e6737da61bd2bc64cb834030c53 = L.marker(
+                [22.982876110711896, -81.16447956154273],
+                {
+}
+            ).addTo(map_be204cfc96cee5b6c399fc96badf4454);
+        
+    
+            var icon_802678f3e38d130d70ca36401afa9a21 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_a7581e6737da61bd2bc64cb834030c53.setIcon(icon_802678f3e38d130d70ca36401afa9a21);
+        
+    
+        var popup_43ea45409f01ecd3c98077ca908aaa9d = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_6e8d0960720aa0821c27f1f325dc6ac2 = $(`<div id="html_6e8d0960720aa0821c27f1f325dc6ac2" style="width: 100.0%; height: 100.0%;"><strong>Circuito no apagable 5223</strong><br>Bloque: -<br>Circuito: 5223<br>Consumo Mañana: 0.0 MWh<br>Consumo Tarde: 0.0 MWh<br>Consumo Noche: 0.0 MWh</div>`)[0];
+                popup_43ea45409f01ecd3c98077ca908aaa9d.setContent(html_6e8d0960720aa0821c27f1f325dc6ac2);
+            
+        
+
+        marker_a7581e6737da61bd2bc64cb834030c53.bindPopup(popup_43ea45409f01ecd3c98077ca908aaa9d)
+        ;
+
+        
+    
+    
+            var marker_60a337be81e8071eb57e06293461ccf9 = L.marker(
+                [23.051358930377155, -81.58429056389906],
+                {
+}
+            ).addTo(map_be204cfc96cee5b6c399fc96badf4454);
+        
+    
+            var icon_dcfaa5da04a2a3bb4111178cc2d15ce6 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_60a337be81e8071eb57e06293461ccf9.setIcon(icon_dcfaa5da04a2a3bb4111178cc2d15ce6);
+        
+    
+        var popup_dcaa3385a69af376aa341d2ae532ecd5 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_f9ed529ee864833f09417945aef3e579 = $(`<div id="html_f9ed529ee864833f09417945aef3e579" style="width: 100.0%; height: 100.0%;"><strong>Circuito no apagable MI1453</strong><br>Bloque: -<br>Circuito: MI1453<br>Consumo Mañana: 0.0 MWh<br>Consumo Tarde: 0.0 MWh<br>Consumo Noche: 0.0 MWh</div>`)[0];
+                popup_dcaa3385a69af376aa341d2ae532ecd5.setContent(html_f9ed529ee864833f09417945aef3e579);
+            
+        
+
+        marker_60a337be81e8071eb57e06293461ccf9.bindPopup(popup_dcaa3385a69af376aa341d2ae532ecd5)
+        ;
+
+        
+    
+</script>
+</html>
